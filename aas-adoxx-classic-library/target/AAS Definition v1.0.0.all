@@ -1,0 +1,4006 @@
+VERSION <5.1>
+
+APPLICATION LIBRARY <AAS Definition v1.0.0>
+
+RECORDCLASS <keys> : <RecordClass>
+
+CLASSATTRIBUTE <ClassAbstract>
+ VALUE 0
+
+CLASSATTRIBUTE <ClassVisible>
+ VALUE 1
+
+CLASSATTRIBUTE <AttrRep>
+ VALUE "NOTEBOOK
+CHAPTER \"Description\"
+ATTR \"type\"
+ATTR \"value\""
+
+ATTRIBUTE <type>
+ TYPE ENUMERATION
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <EnumerationDomain>
+ VALUE "AnnotationRelationshipElement@AssetAdministrationShell@BasicEventElement@Blob@Capability@ConceptDescription@DataElement@Entity@EventElement@File@FragmentReference@GlobalReference@Identifiable@MultiLanguageProperty@Range@Operation@Property@Range@Referable@ReferenceElement@RelationshipElement@Submodel@SubmodelElement@SubmodelElementCollection@SubmodelElementList"
+
+ATTRIBUTE <value>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+RECORDCLASS <references> : <RecordClass>
+
+CLASSATTRIBUTE <ClassAbstract>
+ VALUE 0
+
+CLASSATTRIBUTE <ClassVisible>
+ VALUE 1
+
+CLASSATTRIBUTE <AttrRep>
+ VALUE "NOTEBOOK
+CHAPTER \"Description\"
+ATTR \"reference\""
+
+ATTRIBUTE <reference>
+ TYPE INTERREF
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <AttributeInterRefDomain>
+ VALUE "REFDOMAIN max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"Reference\"
+	max:1"
+
+RECORDCLASS <specificAssetIds> : <RecordClass>
+
+CLASSATTRIBUTE <ClassAbstract>
+ VALUE 0
+
+CLASSATTRIBUTE <ClassVisible>
+ VALUE 1
+
+CLASSATTRIBUTE <AttrRep>
+ VALUE "NOTEBOOK
+CHAPTER \"Description\"
+ATTR \"specificAssetId\""
+
+ATTRIBUTE <specificAssetId>
+ TYPE INTERREF
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <AttributeInterRefDomain>
+ VALUE "REFDOMAIN max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"SpecificAssetId\"
+	max:1"
+
+RECORDCLASS <multiLanguageText> : <RecordClass>
+
+CLASSATTRIBUTE <ClassAbstract>
+ VALUE 0
+
+CLASSATTRIBUTE <ClassVisible>
+ VALUE 1
+
+CLASSATTRIBUTE <AttrRep>
+ VALUE "NOTEBOOK
+CHAPTER \"Description\"
+ATTR \"language\"
+ATTR \"text\""
+
+ATTRIBUTE <language>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <text>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+RECORDCLASS <extensions> : <RecordClass>
+
+CLASSATTRIBUTE <ClassAbstract>
+ VALUE 0
+
+CLASSATTRIBUTE <ClassVisible>
+ VALUE 1
+
+CLASSATTRIBUTE <AttrRep>
+ VALUE "NOTEBOOK
+CHAPTER \"Description\"
+ATTR \"extension\""
+
+ATTRIBUTE <extension>
+ TYPE INTERREF
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <AttributeInterRefDomain>
+ VALUE "REFDOMAIN max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"Extension\"
+	max:1"
+
+RECORDCLASS <submodelElements> : <RecordClass>
+
+CLASSATTRIBUTE <ClassAbstract>
+ VALUE 0
+
+CLASSATTRIBUTE <ClassVisible>
+ VALUE 1
+
+CLASSATTRIBUTE <AttrRep>
+ VALUE "NOTEBOOK
+CHAPTER \"Description\"
+ATTR \"submodelElement\""
+
+ATTRIBUTE <submodelElement>
+ TYPE INTERREF
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <AttributeInterRefDomain>
+ VALUE "REFDOMAIN max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"RelationshipElement\"
+	max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"AnnotatedRelationshipElement\"
+	max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"Property\"
+	max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"MultiLanguageProperty\"
+	max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"Range\"
+	max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"Blob\"
+	max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"File\"
+	max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"ReferenceElement\"
+	max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"SubmodelElementList\"
+	max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"SubmodelElementCollection\"
+	max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"Capability\"
+	max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"Operation\"
+	max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"Entity\"
+	max:1"
+
+RECORDCLASS <qualifiers> : <RecordClass>
+
+CLASSATTRIBUTE <ClassAbstract>
+ VALUE 0
+
+CLASSATTRIBUTE <ClassVisible>
+ VALUE 1
+
+CLASSATTRIBUTE <AttrRep>
+ VALUE "NOTEBOOK
+CHAPTER \"Description\"
+ATTR \"qualifier\""
+
+ATTRIBUTE <qualifier>
+ TYPE INTERREF
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <AttributeInterRefDomain>
+ VALUE "REFDOMAIN max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"Qualifier\"
+	max:1"
+
+RECORDCLASS <dataElements> : <RecordClass>
+
+CLASSATTRIBUTE <ClassAbstract>
+ VALUE 0
+
+CLASSATTRIBUTE <ClassVisible>
+ VALUE 1
+
+CLASSATTRIBUTE <AttrRep>
+ VALUE "NOTEBOOK
+CHAPTER \"Description\"
+ATTR \"dataElement\""
+
+ATTRIBUTE <dataElement>
+ TYPE INTERREF
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <AttributeInterRefDomain>
+ VALUE "REFDOMAIN max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"Property\"
+	max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"MultiLanguageProperty\"
+	max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"Range\"
+	max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"Blob\"
+	max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"File\"
+	max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"ReferenceElement\"
+	max:1"
+
+RECORDCLASS <operationVariables> : <RecordClass>
+
+CLASSATTRIBUTE <ClassAbstract>
+ VALUE 0
+
+CLASSATTRIBUTE <ClassVisible>
+ VALUE 1
+
+CLASSATTRIBUTE <AttrRep>
+ VALUE "NOTEBOOK
+CHAPTER \"Description\"
+ATTR \"operationVariable\""
+
+ATTRIBUTE <operationVariable>
+ TYPE INTERREF
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <AttributeInterRefDomain>
+ VALUE "REFDOMAIN max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"OperationVariable\"
+	max:1"
+
+RECORDCLASS <valueLists> : <RecordClass>
+
+CLASSATTRIBUTE <ClassAbstract>
+ VALUE 0
+
+CLASSATTRIBUTE <ClassVisible>
+ VALUE 1
+
+CLASSATTRIBUTE <AttrRep>
+ VALUE "NOTEBOOK
+CHAPTER \"Description\"
+ATTR \"value\"
+ATTR \"valueId\""
+
+ATTRIBUTE <value>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <valueId>
+ TYPE INTERREF
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <AttributeInterRefDomain>
+ VALUE "REFDOMAIN max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"Reference\"
+	max:1"
+
+BUSINESS PROCESS LIBRARY <AAS Definition v1.0.0 Dynamic>
+
+ATTRIBUTE <Version number>
+VALUE ""
+
+ATTRIBUTE <Date last changed>
+VALUE ""
+
+ATTRIBUTE <Last user>
+VALUE ""
+
+ATTRIBUTE <Keywords>
+VALUE ""
+
+ATTRIBUTE <Comment>
+VALUE ""
+
+ATTRIBUTE <Description>
+VALUE ""
+
+ATTRIBUTE <Modi>
+VALUE "GENERAL order-of-classes:custom
+
+MODELTYPE \"Asset Administration Shell Environment\"
+INCL \"AssetAdministrationShell\"
+INCL \"ConceptDescription\"
+INCL \"DataSpecification\"
+INCL \"Submodel\"
+INCL \"Qualifier\"
+INCL \"Reference\"
+INCL \"Extension\"
+INCL \"SpecificAssetId\"
+INCL \"RelationshipElement\"
+INCL \"AnnotatedRelationshipElement\"
+INCL \"Property\"
+INCL \"MultiLanguageProperty\"
+INCL \"Range\"
+INCL \"Blob\"
+INCL \"File\"
+INCL \"ReferenceElement\"
+INCL \"SubmodelElementList\"
+INCL \"SubmodelElementCollection\"
+INCL \"Capability\"
+INCL \"Operation\"
+INCL \"OperationVariable\"
+INCL \"Entity\"
+INCL \"derivedFrom\"
+INCL \"hasSubmodel\"
+INCL \"hasQualifier\"
+INCL \"hasElement\"
+INCL \"collect\"
+INCL \"list\"
+INCL \"reference\"
+"
+
+ATTRIBUTE <Page layouts>
+VALUE "LAYOUT \"Full page (without header/footer)\"
+PAGE w:p h:p"
+
+ATTRIBUTE <Simmapping>
+VALUE "SIMOPTION undefined"
+
+ATTRIBUTE <Simtext>
+VALUE "SIMTEXT undefined"
+
+ATTRIBUTE <Queries>
+VALUE ""
+
+ATTRIBUTE <Input fields>
+VALUE ""
+
+ATTRIBUTE <AQL commands>
+VALUE ""
+
+ATTRIBUTE <Result attributes>
+VALUE ""
+
+ATTRIBUTE <Relation analysis>
+VALUE ""
+
+ATTRIBUTE <Service>
+VALUE "http://www.adoxx.org
+
+faq@adoxx.org"
+
+ATTRIBUTE <User defined>
+VALUE "yes"
+
+ATTRIBUTE <Library icons>
+VALUE ""
+
+ATTRIBUTE <Evaluation queries>
+VALUE ""
+
+ATTRIBUTE <Evaluation input fields>
+VALUE ""
+
+ATTRIBUTE <Evaluation AQL commands>
+VALUE ""
+
+ATTRIBUTE <Evaluation result attributes>
+VALUE ""
+
+ATTRIBUTE <Sim result mapping>
+VALUE ""
+
+ATTRIBUTE <Numbering>
+VALUE "numeric"
+
+ATTRIBUTE <Graphical representation>
+VALUE "GRAPHREP
+FILL color:aliceblue
+RECTANGLE x:-.3cm y:-.3cm w:.6cm h:.6cm"
+
+ATTRIBUTE <Days per year>
+VALUE 170
+
+ATTRIBUTE <Hours per day>
+VALUE 8
+
+ATTRIBUTE <CCC mapping>
+VALUE ""
+
+ATTRIBUTE <CCC default setting>
+VALUE ""
+
+ATTRIBUTE <Object arrangement>
+VALUE ""
+
+ATTRIBUTE <External coupling>
+VALUE "ON_EVENT \"AppInitialized\" {
+  EXECUTE file:(\"db:\\\\AAS_Utils.asc\")
+}
+
+ITEM \"AdoScript Debug Shell\" acquisition:\"Extras\" modeling:\"Extras\" analysis:\"Extras\" simulation:\"Extras\" evaluation:\"Extras\" importexport:\"Extras\"
+CC \"AdoScript\" EDITBOX text:(\"\") fontname:\"Courier New\" fontheight:12 title:\"Debug code\" oktext:\"Run\"
+IF (endbutton = \"ok\") {
+  EXECUTE (text)
+}
+
+ITEM \"Export AAS JSON\" acquisition:\"Extras\" modeling:\"Extras\" analysis:\"Extras\" simulation:\"Extras\" evaluation:\"Extras\" importexport:\"Extras\"
+AAS_EXPORT_JSON"
+
+ATTRIBUTE <Agent definition>
+VALUE ""
+
+ATTRIBUTE <Variable check>
+VALUE "off"
+
+ATTRIBUTE <Configuration of documentation>
+VALUE ""
+
+ATTRIBUTE <Default settings>
+VALUE "GRID snap:on visible:off w:0.50cm h:0.50cm
+GRADIENT_PRINTING mode:avg-color"
+
+ATTRIBUTE <Predefined queries>
+VALUE ""
+
+ATTRIBUTE <Predefined evaluation queries>
+VALUE ""
+
+ATTRIBUTE <Dynamic evaluation modules>
+VALUE ""
+
+ATTRIBUTE <Path navigator>
+VALUE ""
+
+ATTRIBUTE <Versioning format>
+VALUE ""
+
+CLASS <__LibraryMetaData__> : <__D-construct__>
+
+CLASSATTRIBUTE <ClassAbstract>
+ VALUE 1
+
+CLASSATTRIBUTE <AttrRep>
+ VALUE "NOTEBOOK
+CHAPTER \"Description\"
+ATTR \"Name\""
+
+CLASSATTRIBUTE <homedir>
+ TYPE STRING
+ VALUE "c:\\Program Files (x86)\\BOC\\ADOxx15_EN_SA\\"
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+CLASSATTRIBUTE <__ModelListChangeCounter__>
+ TYPE INTEGER
+ VALUE 0
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <AttributeNumericDomain>
+ VALUE ""
+
+CLASSATTRIBUTE <__APListChangeCounter__>
+ TYPE INTEGER
+ VALUE 0
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <AttributeNumericDomain>
+ VALUE ""
+
+CLASSATTRIBUTE <__UserListChangeCounter__>
+ TYPE INTEGER
+ VALUE 0
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <AttributeNumericDomain>
+ VALUE ""
+
+CLASSATTRIBUTE <ClassVisible>
+ VALUE 1
+
+CLASS <__ModelTypeMetaData__> : <__D-construct__>
+
+CLASSATTRIBUTE <ClassAbstract>
+ VALUE 1
+
+CLASSATTRIBUTE <AttrRep>
+ VALUE "NOTEBOOK
+CHAPTER \"Description\"
+ATTR \"Name\""
+
+CLASSATTRIBUTE <ClassVisible>
+ VALUE 1
+
+CLASSATTRIBUTE <__GfxThumb__>
+ TYPE LONGSTRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+CLASS <Referable> : <__D-construct__>
+
+ATTRIBUTE <Description>
+ TYPE LONGSTRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 1
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+CLASSATTRIBUTE <ClassAbstract>
+ VALUE 1
+
+CLASS <Reference> : <__D-construct__>
+
+CLASSATTRIBUTE <ClassAbstract>
+ VALUE 0
+
+ATTRIBUTE <type>
+ TYPE ENUMERATION
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <EnumerationDomain>
+ VALUE "ExternalReference@ModelReference"
+
+ATTRIBUTE <referredSemanticId>
+ TYPE INTERREF
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <AttributeInterRefDomain>
+ VALUE "REFDOMAIN max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"Reference\"
+	max:1"
+
+ATTRIBUTE <key>
+ TYPE RECORD
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <RecordClassName>
+ VALUE "keys"
+
+FACET <RecordClassMultiplicity>
+ VALUE 0
+
+CLASSATTRIBUTE <GraphRep>
+ VALUE "GRAPHREP
+SHADOW off
+CLIP_POLY 3 x1:0.2cm y1:0.0cm x2:-0.3cm y2:0.3cm x3:-0.3cm y3:-0.3cm
+GRADIENT_RECT x:-0.7cm y:-0.7cm w:1.4cm h:1.4cm style:updiag color1:(\"white\") color2:(\"blue\")
+CLIP_OFF
+PEN w:0.05cm color:(\"royalblue\") join:miter
+FILL style:null
+POLYGON 3 x1:0.2cm y1:0.0cm x2:-0.3cm y2:0.3cm x3:-0.3cm y3:-0.3cm
+ATTR \"Name\" x:0.0cm y:0.35cm w:c:2.0cm h:t line-break:words"
+
+CLASSATTRIBUTE <AttrRep>
+ VALUE "NOTEBOOK
+
+CHAPTER \"General\"
+ATTR \"Name\"
+ATTR \"type\"
+ATTR \"referredSemanticId\"
+ATTR \"key\"
+"
+
+CLASS <Extension> : <__D-construct__>
+
+CLASSATTRIBUTE <ClassAbstract>
+ VALUE 0
+
+ATTRIBUTE <name>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <valueType>
+ TYPE ENUMERATION
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <EnumerationDomain>
+ VALUE "xs:string@xs:boolean@xs:decimal@xs:integer@xs:double@xs:float@xs:date@xs:time@xs:dateTime@xs:gYear@xs:gMonth@xs:gDay@xs:gYearMonth@xs:gMonthDay@xs:duration@xs:byte@xs:short@xs:int@xs:long@xs:unsignedByte@xs:unsignedShort@xs:unsignedInt@xs:unsignedLong@xs:positiveInteger@xs:nonNegativeInteger@xs:negativeInteger@xs:nonPositiveInteger@xs:hexBinary@xs:base64Binary@xs:anyURI"
+
+ATTRIBUTE <value>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <refersTo>
+ TYPE RECORD
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <RecordClassName>
+ VALUE "references"
+
+FACET <RecordClassMultiplicity>
+ VALUE 0
+
+CLASSATTRIBUTE <GraphRep>
+ VALUE "GRAPHREP
+SHADOW off
+FILL color:green
+ELLIPSE x:0.00cm y:0cm rx:1cm ry:1cm
+ATTR \"Name\" x:0.00cm y:1.1cm h:t w:c:3cm line-break:words
+PEN
+FONT \"Arial\" h:30pt color:white
+TEXT \"Ext\" y:0.1cm w:c h:c"
+
+CLASSATTRIBUTE <AttrRep>
+ VALUE "NOTEBOOK
+
+CHAPTER \"General\"
+ATTR \"Name\"
+ATTR \"valueType\"
+ATTR \"value\"
+ATTR \"refersTo\"
+"
+
+CLASS <SpecificAssetId> : <__D-construct__>
+
+CLASSATTRIBUTE <ClassAbstract>
+ VALUE 0
+
+ATTRIBUTE <name>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <value>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <externalSubjectId>
+ TYPE INTERREF
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <AttributeInterRefDomain>
+ VALUE "REFDOMAIN max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"Reference\"
+	max:1"
+
+ATTRIBUTE <semanticId>
+ TYPE INTERREF
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <AttributeInterRefDomain>
+ VALUE "REFDOMAIN max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"Reference\"
+	max:1"
+
+ATTRIBUTE <supplementalSemanticId>
+ TYPE RECORD
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <RecordClassName>
+ VALUE "references"
+
+FACET <RecordClassMultiplicity>
+ VALUE 0
+
+CLASSATTRIBUTE <GraphRep>
+ VALUE "GRAPHREP
+SHADOW off
+FILL color:green
+ELLIPSE x:0.00cm y:0cm rx:1cm ry:1cm
+ATTR \"Name\" x:0.00cm y:1.1cm h:t w:c:3cm line-break:words
+PEN
+FONT \"Arial\" h:30pt color:white
+TEXT \"SA\" y:0.1cm w:c h:c"
+
+CLASSATTRIBUTE <AttrRep>
+ VALUE "NOTEBOOK
+
+CHAPTER \"General\"
+ATTR \"name\"
+ATTR \"value\"
+ATTR \"externalSubjectId\"
+ATTR \"semanticId\"
+ATTR \"supplementalSemanticId\""
+
+CLASS <AssetAdministrationShell> : <Referable>
+
+CLASSATTRIBUTE <ClassAbstract>
+ VALUE 0
+
+ATTRIBUTE <derivedFrom>
+ TYPE INTERREF
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <AttributeInterRefDomain>
+ VALUE "REFDOMAIN max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"AssetAdministrationShell\"
+	max:1"
+
+ATTRIBUTE <assetKind>
+ TYPE ENUMERATION
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <EnumerationDomain>
+ VALUE "Type@Instance@NotApplicable"
+
+ATTRIBUTE <specificAssetId>
+ TYPE RECORD
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <RecordClassName>
+ VALUE "specificAssetIds"
+
+FACET <RecordClassMultiplicity>
+ VALUE 0
+
+ATTRIBUTE <globalAssetId>
+ TYPE LONGSTRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <assetType>
+ TYPE LONGSTRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <defaultThumbnail_path>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <defaultThumbnail_contentType>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <version>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <revision>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <creator>
+ TYPE LONGSTRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <templateId>
+ TYPE LONGSTRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <id>
+ TYPE LONGSTRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <dataSpecification>
+ TYPE RECORD
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <RecordClassName>
+ VALUE "references"
+
+FACET <RecordClassMultiplicity>
+ VALUE 0
+
+ATTRIBUTE <idShort>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <displayName>
+ TYPE RECORD
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <RecordClassName>
+ VALUE "multiLanguageText"
+
+FACET <RecordClassMultiplicity>
+ VALUE 0
+
+ATTRIBUTE <description>
+ TYPE RECORD
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <RecordClassName>
+ VALUE "multiLanguageText"
+
+FACET <RecordClassMultiplicity>
+ VALUE 0
+
+ATTRIBUTE <extension>
+ TYPE RECORD
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <RecordClassName>
+ VALUE "extensions"
+
+FACET <RecordClassMultiplicity>
+ VALUE 0
+
+CLASSATTRIBUTE <GraphRep>
+ VALUE "GRAPHREP
+SHADOW off
+SET text:(\"AAS\")
+AVAL name: \"Name\"
+FILL color:\"white\"
+RECTANGLE x:-1cm y:-0.5cm w:2cm h:1cm
+ATTR \"Name\" x:0.00cm y:0.7cm h:t w:c:2cm line-break:words
+FONT \"Arial\" h:20pt color:black
+TEXT (text) w:c:1cm h:c line-break:words
+"
+
+CLASSATTRIBUTE <AttrRep>
+ VALUE "NOTEBOOK
+
+CHAPTER \"General\"
+ATTR \"Name\"
+ATTR \"id\"
+ATTR \"derivedFrom\"
+ATTR \"idShort\"
+ATTR \"displayName\"
+ATTR \"description\"
+CHAPTER \"Asset Information\"
+ATTR \"assetKind\"
+ATTR \"specificAssetId\"
+ATTR \"globalAssetId\"
+ATTR \"assetType\"
+ATTR \"defaultThumbnail_path\"
+ATTR \"defaultThumbnail_contentType\"
+CHAPTER \"Administrative Information\"
+ATTR \"version\"
+ATTR \"revision\"
+ATTR \"creator\"
+ATTR \"templateId\"
+CHAPTER \"Data Specification\"
+ATTR \"dataSpecification\"
+CHAPTER \"Extensions\"
+ATTR \"extension\"
+"
+
+CLASS <ConceptDescription> : <__D-construct__>
+
+CLASSATTRIBUTE <ClassAbstract>
+ VALUE 0
+
+ATTRIBUTE <version>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <revision>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <creator>
+ TYPE LONGSTRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <templateId>
+ TYPE LONGSTRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <id>
+ TYPE LONGSTRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <idShort>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <displayName>
+ TYPE RECORD
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <RecordClassName>
+ VALUE "multiLanguageText"
+
+FACET <RecordClassMultiplicity>
+ VALUE 0
+
+ATTRIBUTE <description>
+ TYPE RECORD
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <RecordClassName>
+ VALUE "multiLanguageText"
+
+FACET <RecordClassMultiplicity>
+ VALUE 0
+
+ATTRIBUTE <extension>
+ TYPE RECORD
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <RecordClassName>
+ VALUE "extensions"
+
+FACET <RecordClassMultiplicity>
+ VALUE 0
+
+ATTRIBUTE <dataSpecification>
+ TYPE RECORD
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <RecordClassName>
+ VALUE "references"
+
+FACET <RecordClassMultiplicity>
+ VALUE 0
+
+ATTRIBUTE <isCaseOf>
+ TYPE RECORD
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <RecordClassName>
+ VALUE "references"
+
+FACET <RecordClassMultiplicity>
+ VALUE 0
+
+CLASSATTRIBUTE <GraphRep>
+ VALUE "GRAPHREP
+SHADOW off
+FILL color:blue
+ELLIPSE x:0.00cm y:0cm rx:1cm ry:1cm
+ATTR \"Name\" x:0.00cm y:1.1cm h:t w:c:3cm line-break:words
+PEN
+FONT \"Arial\" h:30pt color:white
+TEXT \"CD\" y:0.1cm w:c h:c"
+
+CLASSATTRIBUTE <AttrRep>
+ VALUE "NOTEBOOK
+
+CHAPTER \"General\"
+ATTR \"Name\"
+ATTR \"id\"
+ATTR \"idShort\"
+ATTR \"displayName\"
+ATTR \"description\"
+ATTR \"isCaseOf\"
+CHAPTER \"Administrative Information\"
+ATTR \"version\"
+ATTR \"revision\"
+ATTR \"creator\"
+ATTR \"templateId\"
+CHAPTER \"Data Specification\"
+ATTR \"dataSpecification\"
+CHAPTER \"Extensions\"
+ATTR \"extension\"
+"
+
+CLASS <DataSpecification> : <__D-construct__>
+
+CLASSATTRIBUTE <ClassAbstract>
+ VALUE 0
+
+ATTRIBUTE <version>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <revision>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <creator>
+ TYPE LONGSTRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <templateId>
+ TYPE LONGSTRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <id>
+ TYPE LONGSTRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <description>
+ TYPE RECORD
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <RecordClassName>
+ VALUE "multiLanguageText"
+
+FACET <RecordClassMultiplicity>
+ VALUE 0
+
+ATTRIBUTE <preferredName>
+ TYPE RECORD
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <RecordClassName>
+ VALUE "multiLanguageText"
+
+FACET <RecordClassMultiplicity>
+ VALUE 0
+
+ATTRIBUTE <shortName>
+ TYPE RECORD
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <RecordClassName>
+ VALUE "multiLanguageText"
+
+FACET <RecordClassMultiplicity>
+ VALUE 0
+
+ATTRIBUTE <unit>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <unitId>
+ TYPE INTERREF
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <AttributeInterRefDomain>
+ VALUE "REFDOMAIN max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"Reference\"
+	max:1"
+
+ATTRIBUTE <sourceOfDefinition>
+ TYPE LONGSTRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <symbol>
+ TYPE LONGSTRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <dataType>
+ TYPE ENUMERATION
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <EnumerationDomain>
+ VALUE "DATE@STRING@STRING_TRANSLATABLE@INTEGER_MEASURE@INTEGER_COUNT@INTEGER_CURRENCY@REAL_MEASURE@REAL_COUNT@REAL_CURRENCY@BOOLEAN@IRI@IRDI@RATIONAL@RATIONAL_MEASURE@TIME@TIMESTAMP@HTML@BLOB@FILE"
+
+ATTRIBUTE <definition>
+ TYPE RECORD
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <RecordClassName>
+ VALUE "multiLanguageText"
+
+FACET <RecordClassMultiplicity>
+ VALUE 0
+
+ATTRIBUTE <valueFormat>
+ TYPE LONGSTRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <valueList>
+ TYPE RECORD
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <RecordClassName>
+ VALUE "valueLists"
+
+FACET <RecordClassMultiplicity>
+ VALUE 0
+
+ATTRIBUTE <value>
+ TYPE LONGSTRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <min>
+ TYPE ENUMERATION
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <EnumerationDomain>
+ VALUE "True@False"
+
+ATTRIBUTE <max>
+ TYPE ENUMERATION
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <EnumerationDomain>
+ VALUE "True@False"
+
+ATTRIBUTE <nom>
+ TYPE ENUMERATION
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <EnumerationDomain>
+ VALUE "True@False"
+
+ATTRIBUTE <typ>
+ TYPE ENUMERATION
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <EnumerationDomain>
+ VALUE "True@False"
+
+CLASSATTRIBUTE <GraphRep>
+ VALUE "GRAPHREP
+SHADOW off
+FILL color:white
+ELLIPSE x:0.00cm y:0cm rx:1cm ry:1cm
+ATTR \"Name\" x:0.00cm y:1.1cm h:t w:c:3cm line-break:words
+PEN
+FONT \"Arial\" h:30pt color:black
+TEXT \"DS\" y:0.1cm w:c h:c"
+
+CLASSATTRIBUTE <AttrRep>
+ VALUE "NOTEBOOK
+
+CHAPTER \"General\"
+ATTR \"Name\"
+ATTR \"id\"
+ATTR \"description\"
+CHAPTER \"Content\"
+ATTR \"preferredName\"
+ATTR \"shortName\"
+ATTR \"unit\"
+ATTR \"unitId\"
+ATTR \"sourceOfDefinition\"
+ATTR \"symbol\"
+ATTR \"dataType\"
+ATTR \"definition\"
+ATTR \"valueFormat\"
+ATTR \"valueList\"
+ATTR \"value\"
+CHAPTER \"Level Type\"
+ATTR \"min\"
+ATTR \"max\"
+ATTR \"nom\"
+ATTR \"typ\"
+CHAPTER \"Administrative Information\"
+ATTR \"version\"
+ATTR \"revision\"
+ATTR \"creator\"
+ATTR \"templateId\"
+"
+
+CLASS <Qualifier> : <__D-construct__>
+
+CLASSATTRIBUTE <ClassAbstract>
+ VALUE 0
+
+ATTRIBUTE <type>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <valueType>
+ TYPE ENUMERATION
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <EnumerationDomain>
+ VALUE "xs:string@xs:boolean@xs:decimal@xs:integer@xs:double@xs:float@xs:date@xs:time@xs:dateTime@xs:gYear@xs:gMonth@xs:gDay@xs:gYearMonth@xs:gMonthDay@xs:duration@xs:byte@xs:short@xs:int@xs:long@xs:unsignedByte@xs:unsignedShort@xs:unsignedInt@xs:unsignedLong@xs:positiveInteger@xs:nonNegativeInteger@xs:negativeInteger@xs:nonPositiveInteger@xs:hexBinary@xs:base64Binary@xs:anyURI"
+
+ATTRIBUTE <value>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <valueId>
+ TYPE INTERREF
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <AttributeInterRefDomain>
+ VALUE "REFDOMAIN max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"Reference\"
+	max:1"
+
+ATTRIBUTE <kind>
+ TYPE ENUMERATION
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <EnumerationDomain>
+ VALUE "ValueQualifier@ConceptQualifier@TemplateQualifier"
+
+ATTRIBUTE <semanticId>
+ TYPE INTERREF
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <AttributeInterRefDomain>
+ VALUE "REFDOMAIN max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"Reference\"
+	max:1"
+
+ATTRIBUTE <supplementalSemanticId>
+ TYPE RECORD
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <RecordClassName>
+ VALUE "references"
+
+FACET <RecordClassMultiplicity>
+ VALUE 0
+
+CLASSATTRIBUTE <GraphRep>
+ VALUE "GRAPHREP
+SHADOW off
+FILL color:green
+ELLIPSE x:0.00cm y:0cm rx:1cm ry:1cm
+ATTR \"Name\" x:0.00cm y:1.1cm h:t w:c:3cm line-break:words
+PEN
+FONT \"Arial\" h:30pt color:white
+TEXT \"Q\" y:0.1cm w:c h:c"
+
+CLASSATTRIBUTE <AttrRep>
+ VALUE "NOTEBOOK
+
+CHAPTER \"General\"
+ATTR \"Name\"
+ATTR \"type\"
+ATTR \"valueType\"
+ATTR \"value\"
+ATTR \"valueId\"
+ATTR \"kind\"
+CHAPTER \"Semantic\"
+ATTR \"semanticId\"
+ATTR \"supplementalSemanticId\"
+"
+
+CLASS <Qualifiable> : <Referable>
+
+CLASSATTRIBUTE <ClassAbstract>
+ VALUE 1
+
+CLASS <Submodel> : <Qualifiable>
+
+CLASSATTRIBUTE <ClassAbstract>
+ VALUE 0
+
+ATTRIBUTE <submodelElement>
+ TYPE RECORD
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <RecordClassName>
+ VALUE "submodelElements"
+
+FACET <RecordClassMultiplicity>
+ VALUE 0
+
+ATTRIBUTE <kind>
+ TYPE ENUMERATION
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <EnumerationDomain>
+ VALUE "Template@Instance"
+
+ATTRIBUTE <dataSpecification>
+ TYPE RECORD
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <RecordClassName>
+ VALUE "references"
+
+FACET <RecordClassMultiplicity>
+ VALUE 0
+
+ATTRIBUTE <qualifier>
+ TYPE RECORD
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <RecordClassName>
+ VALUE "qualifiers"
+
+FACET <RecordClassMultiplicity>
+ VALUE 0
+
+ATTRIBUTE <semanticId>
+ TYPE INTERREF
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <AttributeInterRefDomain>
+ VALUE "REFDOMAIN max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"Reference\"
+	max:1"
+
+ATTRIBUTE <supplementalSemanticId>
+ TYPE RECORD
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <RecordClassName>
+ VALUE "references"
+
+FACET <RecordClassMultiplicity>
+ VALUE 0
+
+ATTRIBUTE <version>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <revision>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <creator>
+ TYPE LONGSTRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <templateId>
+ TYPE LONGSTRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <id>
+ TYPE LONGSTRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <idShort>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <displayName>
+ TYPE RECORD
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <RecordClassName>
+ VALUE "multiLanguageText"
+
+FACET <RecordClassMultiplicity>
+ VALUE 0
+
+ATTRIBUTE <description>
+ TYPE RECORD
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <RecordClassName>
+ VALUE "multiLanguageText"
+
+FACET <RecordClassMultiplicity>
+ VALUE 0
+
+ATTRIBUTE <extension>
+ TYPE RECORD
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <RecordClassName>
+ VALUE "extensions"
+
+FACET <RecordClassMultiplicity>
+ VALUE 0
+
+CLASSATTRIBUTE <GraphRep>
+ VALUE "GRAPHREP
+SHADOW off
+FILL color:dodgerblue
+ELLIPSE x:0.00cm y:0cm rx:1cm ry:1cm
+ATTR \"Name\" x:0.00cm y:1.1cm h:t w:c:3cm line-break:words
+PEN
+FONT \"Arial\" h:30pt color:white
+TEXT \"SM\" y:0.1cm w:c h:c"
+
+CLASSATTRIBUTE <AttrRep>
+ VALUE "NOTEBOOK
+
+CHAPTER \"General\"
+ATTR \"Name\"
+ATTR \"id\"
+ATTR \"submodelElement\"
+ATTR \"kind\"
+ATTR \"idShort\"
+ATTR \"displayName\"
+ATTR \"description\"
+CHAPTER \"Semantic\"
+ATTR \"qualifier\"
+ATTR \"semanticId\"
+ATTR \"supplementalSemanticId\"
+CHAPTER \"Administrative Information\"
+ATTR \"version\"
+ATTR \"revision\"
+ATTR \"creator\"
+ATTR \"templateId\"
+CHAPTER \"Data Specification\"
+ATTR \"dataSpecification\"
+CHAPTER \"Extensions\"
+ATTR \"extension\"
+"
+
+CLASS <SubmodelElement> : <Qualifiable>
+
+CLASSATTRIBUTE <ClassAbstract>
+ VALUE 1
+
+ATTRIBUTE <semanticId>
+ TYPE INTERREF
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <AttributeInterRefDomain>
+ VALUE "REFDOMAIN max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"Reference\"
+	max:1"
+
+ATTRIBUTE <supplementalSemanticId>
+ TYPE RECORD
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <RecordClassName>
+ VALUE "references"
+
+FACET <RecordClassMultiplicity>
+ VALUE 0
+
+ATTRIBUTE <qualifier>
+ TYPE RECORD
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <RecordClassName>
+ VALUE "qualifiers"
+
+FACET <RecordClassMultiplicity>
+ VALUE 0
+
+ATTRIBUTE <idShort>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <displayName>
+ TYPE RECORD
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <RecordClassName>
+ VALUE "multiLanguageText"
+
+FACET <RecordClassMultiplicity>
+ VALUE 0
+
+ATTRIBUTE <description>
+ TYPE RECORD
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <RecordClassName>
+ VALUE "multiLanguageText"
+
+FACET <RecordClassMultiplicity>
+ VALUE 0
+
+ATTRIBUTE <dataSpecification>
+ TYPE RECORD
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <RecordClassName>
+ VALUE "references"
+
+FACET <RecordClassMultiplicity>
+ VALUE 0
+
+ATTRIBUTE <extension>
+ TYPE RECORD
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <RecordClassName>
+ VALUE "extensions"
+
+FACET <RecordClassMultiplicity>
+ VALUE 0
+
+CLASS <RelationshipElement> : <SubmodelElement>
+
+CLASSATTRIBUTE <ClassAbstract>
+ VALUE 0
+
+ATTRIBUTE <first>
+ TYPE INTERREF
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <AttributeInterRefDomain>
+ VALUE "REFDOMAIN max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"Reference\"
+	max:1"
+
+ATTRIBUTE <second>
+ TYPE INTERREF
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <AttributeInterRefDomain>
+ VALUE "REFDOMAIN max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"Reference\"
+	max:1"
+
+CLASSATTRIBUTE <GraphRep>
+ VALUE "GRAPHREP
+SHADOW off
+CLIP_ELLIPSE rx:1.5cm ry:.68cm
+GRADIENT_RECT x:-1.75cm y:-0.75cm w:3.2cm h:1.5cm style:downdiag color1:(rgbval (\"lightskyblue\", 1.4)) color2:(rgbval (\"lightskyblue\", 0.7))
+FILL style:null
+PEN w:0.08cm color:(rgbval (\"lightskyblue\", 0.7)) join:miter
+CLIP_OFF
+ELLIPSE rx:1.5cm ry:.65cm
+FONT color:(col)
+ATTR \"Name\" y:.8cm w:c:2.8cm h:t
+FONT \"Arial\" h:20pt color:black
+TEXT \"RE\" y:0.05cm w:c h:c"
+
+CLASSATTRIBUTE <AttrRep>
+ VALUE "NOTEBOOK
+
+CHAPTER \"General\"
+ATTR \"Name\"
+ATTR \"idShort\"
+ATTR \"displayName\"
+ATTR \"description\"
+CHAPTER \"Relationship\"
+ATTR \"first\"
+ATTR \"second\"
+CHAPTER \"Semantic\"
+ATTR \"qualifier\"
+ATTR \"semanticId\"
+ATTR \"supplementalSemanticId\"
+CHAPTER \"Data Specification\"
+ATTR \"dataSpecification\"
+CHAPTER \"Extensions\"
+ATTR \"extension\"
+"
+
+CLASS <AnnotatedRelationshipElement> : <RelationshipElement>
+
+CLASSATTRIBUTE <ClassAbstract>
+ VALUE 0
+
+ATTRIBUTE <dataElement>
+ TYPE RECORD
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <RecordClassName>
+ VALUE "dataElements"
+
+FACET <RecordClassMultiplicity>
+ VALUE 0
+
+CLASSATTRIBUTE <GraphRep>
+ VALUE "GRAPHREP
+SHADOW off
+CLIP_ELLIPSE rx:1.5cm ry:.68cm
+GRADIENT_RECT x:-1.75cm y:-0.75cm w:3.2cm h:1.5cm style:downdiag color1:(rgbval (\"lightskyblue\", 1.4)) color2:(rgbval (\"lightskyblue\", 0.7))
+FILL style:null
+PEN w:0.08cm color:(rgbval (\"lightskyblue\", 0.7)) join:miter
+CLIP_OFF
+ELLIPSE rx:1.5cm ry:.65cm
+FONT color:(col)
+ATTR \"Name\" y:.8cm w:c:2.8cm h:t
+FONT \"Arial\" h:20pt color:black
+TEXT \"Ann RE\" y:0.05cm w:c h:c"
+
+CLASSATTRIBUTE <AttrRep>
+ VALUE "NOTEBOOK
+
+CHAPTER \"General\"
+ATTR \"Name\"
+ATTR \"idShort\"
+ATTR \"displayName\"
+ATTR \"description\"
+CHAPTER \"Relationship\"
+ATTR \"first\"
+ATTR \"second\"
+ATTR \"dataElement\"
+CHAPTER \"Semantic\"
+ATTR \"qualifier\"
+ATTR \"semanticId\"
+ATTR \"supplementalSemanticId\"
+CHAPTER \"Data Specification\"
+ATTR \"dataSpecification\"
+CHAPTER \"Extensions\"
+ATTR \"extension\"
+"
+
+CLASS <DataElement> : <SubmodelElement>
+
+CLASSATTRIBUTE <ClassAbstract>
+ VALUE 1
+
+CLASS <Property> : <DataElement>
+
+CLASSATTRIBUTE <ClassAbstract>
+ VALUE 0
+
+ATTRIBUTE <valueType>
+ TYPE ENUMERATION
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <EnumerationDomain>
+ VALUE "xs:string@xs:boolean@xs:decimal@xs:integer@xs:double@xs:float@xs:date@xs:time@xs:dateTime@xs:gYear@xs:gMonth@xs:gDay@xs:gYearMonth@xs:gMonthDay@xs:duration@xs:byte@xs:short@xs:int@xs:long@xs:unsignedByte@xs:unsignedShort@xs:unsignedInt@xs:unsignedLong@xs:positiveInteger@xs:nonNegativeInteger@xs:negativeInteger@xs:nonPositiveInteger@xs:hexBinary@xs:base64Binary@xs:anyURI"
+
+ATTRIBUTE <value>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <valueId>
+ TYPE INTERREF
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <AttributeInterRefDomain>
+ VALUE "REFDOMAIN max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"Reference\"
+	max:1"
+
+CLASSATTRIBUTE <GraphRep>
+ VALUE "GRAPHREP
+SHADOW off
+CLIP_ELLIPSE rx:1.5cm ry:.68cm
+GRADIENT_RECT x:-1.75cm y:-0.75cm w:3.2cm h:1.5cm style:downdiag color1:(rgbval (\"lightskyblue\", 1.4)) color2:(rgbval (\"lightskyblue\", 0.7))
+FILL style:null
+PEN w:0.08cm color:(rgbval (\"lightskyblue\", 0.7)) join:miter
+CLIP_OFF
+ELLIPSE rx:1.5cm ry:.65cm
+FONT color:(col)
+ATTR \"Name\" y:.8cm w:c:2.8cm h:t
+FONT \"Arial\" h:20pt color:black
+TEXT \"Prop\" y:0.05cm w:c h:c"
+
+CLASSATTRIBUTE <AttrRep>
+ VALUE "NOTEBOOK
+
+CHAPTER \"General\"
+ATTR \"Name\"
+ATTR \"idShort\"
+ATTR \"displayName\"
+ATTR \"description\"
+CHAPTER \"Value\"
+ATTR \"valueType\"
+ATTR \"value\"
+ATTR \"valueId\"
+CHAPTER \"Semantic\"
+ATTR \"qualifier\"
+ATTR \"semanticId\"
+ATTR \"supplementalSemanticId\"
+CHAPTER \"Data Specification\"
+ATTR \"dataSpecification\"
+CHAPTER \"Extensions\"
+ATTR \"extension\"
+"
+
+CLASS <MultiLanguageProperty> : <DataElement>
+
+CLASSATTRIBUTE <ClassAbstract>
+ VALUE 0
+
+ATTRIBUTE <value>
+ TYPE RECORD
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <RecordClassName>
+ VALUE "multiLanguageText"
+
+FACET <RecordClassMultiplicity>
+ VALUE 0
+
+ATTRIBUTE <valueId>
+ TYPE INTERREF
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <AttributeInterRefDomain>
+ VALUE "REFDOMAIN max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"Reference\"
+	max:1"
+
+CLASSATTRIBUTE <GraphRep>
+ VALUE "GRAPHREP
+SHADOW off
+CLIP_ELLIPSE rx:1.5cm ry:.68cm
+GRADIENT_RECT x:-1.75cm y:-0.75cm w:3.2cm h:1.5cm style:downdiag color1:(rgbval (\"lightskyblue\", 1.4)) color2:(rgbval (\"lightskyblue\", 0.7))
+FILL style:null
+PEN w:0.08cm color:(rgbval (\"lightskyblue\", 0.7)) join:miter
+CLIP_OFF
+ELLIPSE rx:1.5cm ry:.65cm
+FONT color:(col)
+ATTR \"Name\" y:.8cm w:c:2.8cm h:t
+FONT \"Arial\" h:20pt color:black
+TEXT \"ML Prop\" y:0.05cm w:c h:c"
+
+CLASSATTRIBUTE <AttrRep>
+ VALUE "NOTEBOOK
+
+CHAPTER \"General\"
+ATTR \"Name\"
+ATTR \"idShort\"
+ATTR \"displayName\"
+ATTR \"description\"
+CHAPTER \"Value\"
+ATTR \"value\"
+ATTR \"valueId\"
+CHAPTER \"Semantic\"
+ATTR \"qualifier\"
+ATTR \"semanticId\"
+ATTR \"supplementalSemanticId\"
+CHAPTER \"Data Specification\"
+ATTR \"dataSpecification\"
+CHAPTER \"Extensions\"
+ATTR \"extension\"
+"
+
+CLASS <Range> : <DataElement>
+
+CLASSATTRIBUTE <ClassAbstract>
+ VALUE 0
+
+ATTRIBUTE <valueType>
+ TYPE ENUMERATION
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <EnumerationDomain>
+ VALUE "xs:string@xs:boolean@xs:decimal@xs:integer@xs:double@xs:float@xs:date@xs:time@xs:dateTime@xs:gYear@xs:gMonth@xs:gDay@xs:gYearMonth@xs:gMonthDay@xs:duration@xs:byte@xs:short@xs:int@xs:long@xs:unsignedByte@xs:unsignedShort@xs:unsignedInt@xs:unsignedLong@xs:positiveInteger@xs:nonNegativeInteger@xs:negativeInteger@xs:nonPositiveInteger@xs:hexBinary@xs:base64Binary@xs:anyURI"
+
+ATTRIBUTE <min>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <max>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+CLASSATTRIBUTE <GraphRep>
+ VALUE "GRAPHREP
+SHADOW off
+CLIP_ELLIPSE rx:1.5cm ry:.68cm
+GRADIENT_RECT x:-1.75cm y:-0.75cm w:3.2cm h:1.5cm style:downdiag color1:(rgbval (\"lightskyblue\", 1.4)) color2:(rgbval (\"lightskyblue\", 0.7))
+FILL style:null
+PEN w:0.08cm color:(rgbval (\"lightskyblue\", 0.7)) join:miter
+CLIP_OFF
+ELLIPSE rx:1.5cm ry:.65cm
+FONT color:(col)
+ATTR \"Name\" y:.8cm w:c:2.8cm h:t
+FONT \"Arial\" h:20pt color:black
+TEXT \"Range\" y:0.05cm w:c h:c"
+
+CLASSATTRIBUTE <AttrRep>
+ VALUE "NOTEBOOK
+
+CHAPTER \"General\"
+ATTR \"Name\"
+ATTR \"idShort\"
+ATTR \"displayName\"
+ATTR \"description\"
+CHAPTER \"Value\"
+ATTR \"valueType\"
+ATTR \"min\"
+ATTR \"max\"
+CHAPTER \"Semantic\"
+ATTR \"qualifier\"
+ATTR \"semanticId\"
+ATTR \"supplementalSemanticId\"
+CHAPTER \"Data Specification\"
+ATTR \"dataSpecification\"
+CHAPTER \"Extensions\"
+ATTR \"extension\"
+"
+
+CLASS <Blob> : <DataElement>
+
+CLASSATTRIBUTE <ClassAbstract>
+ VALUE 0
+
+ATTRIBUTE <value>
+ TYPE LONGSTRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <contentType>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+CLASSATTRIBUTE <GraphRep>
+ VALUE "GRAPHREP
+SHADOW off
+CLIP_ELLIPSE rx:1.5cm ry:.68cm
+GRADIENT_RECT x:-1.75cm y:-0.75cm w:3.2cm h:1.5cm style:downdiag color1:(rgbval (\"lightskyblue\", 1.4)) color2:(rgbval (\"lightskyblue\", 0.7))
+FILL style:null
+PEN w:0.08cm color:(rgbval (\"lightskyblue\", 0.7)) join:miter
+CLIP_OFF
+ELLIPSE rx:1.5cm ry:.65cm
+FONT color:(col)
+ATTR \"Name\" y:.8cm w:c:2.8cm h:t
+FONT \"Arial\" h:20pt color:black
+TEXT \"Blob\" y:0.05cm w:c h:c"
+
+CLASSATTRIBUTE <AttrRep>
+ VALUE "NOTEBOOK
+
+CHAPTER \"General\"
+ATTR \"Name\"
+ATTR \"idShort\"
+ATTR \"displayName\"
+ATTR \"description\"
+CHAPTER \"Value\"
+ATTR \"value\"
+ATTR \"contentType\"
+CHAPTER \"Semantic\"
+ATTR \"qualifier\"
+ATTR \"semanticId\"
+ATTR \"supplementalSemanticId\"
+CHAPTER \"Data Specification\"
+ATTR \"dataSpecification\"
+CHAPTER \"Extensions\"
+ATTR \"extension\"
+"
+
+CLASS <File> : <DataElement>
+
+CLASSATTRIBUTE <ClassAbstract>
+ VALUE 0
+
+ATTRIBUTE <value>
+ TYPE LONGSTRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <contentType>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+CLASSATTRIBUTE <GraphRep>
+ VALUE "GRAPHREP
+SHADOW off
+CLIP_ELLIPSE rx:1.5cm ry:.68cm
+GRADIENT_RECT x:-1.75cm y:-0.75cm w:3.2cm h:1.5cm style:downdiag color1:(rgbval (\"lightskyblue\", 1.4)) color2:(rgbval (\"lightskyblue\", 0.7))
+FILL style:null
+PEN w:0.08cm color:(rgbval (\"lightskyblue\", 0.7)) join:miter
+CLIP_OFF
+ELLIPSE rx:1.5cm ry:.65cm
+FONT color:(col)
+ATTR \"Name\" y:.8cm w:c:2.8cm h:t
+FONT \"Arial\" h:20pt color:black
+TEXT \"File\" y:0.05cm w:c h:c"
+
+CLASSATTRIBUTE <AttrRep>
+ VALUE "NOTEBOOK
+
+CHAPTER \"General\"
+ATTR \"Name\"
+ATTR \"idShort\"
+ATTR \"displayName\"
+ATTR \"description\"
+CHAPTER \"Value\"
+ATTR \"value\"
+ATTR \"contentType\"
+CHAPTER \"Semantic\"
+ATTR \"qualifier\"
+ATTR \"semanticId\"
+ATTR \"supplementalSemanticId\"
+CHAPTER \"Data Specification\"
+ATTR \"dataSpecification\"
+CHAPTER \"Extensions\"
+ATTR \"extension\"
+"
+
+CLASS <ReferenceElement> : <DataElement>
+
+CLASSATTRIBUTE <ClassAbstract>
+ VALUE 0
+
+ATTRIBUTE <value>
+ TYPE INTERREF
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <AttributeInterRefDomain>
+ VALUE "REFDOMAIN max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"Reference\"
+	max:1"
+
+CLASSATTRIBUTE <GraphRep>
+ VALUE "GRAPHREP
+SHADOW off
+CLIP_ELLIPSE rx:1.5cm ry:.68cm
+GRADIENT_RECT x:-1.75cm y:-0.75cm w:3.2cm h:1.5cm style:downdiag color1:(rgbval (\"lightskyblue\", 1.4)) color2:(rgbval (\"lightskyblue\", 0.7))
+FILL style:null
+PEN w:0.08cm color:(rgbval (\"lightskyblue\", 0.7)) join:miter
+CLIP_OFF
+ELLIPSE rx:1.5cm ry:.65cm
+FONT color:(col)
+ATTR \"Name\" y:.8cm w:c:2.8cm h:t
+FONT \"Arial\" h:20pt color:black
+TEXT \"Ref El\" y:0.05cm w:c h:c"
+
+CLASSATTRIBUTE <AttrRep>
+ VALUE "NOTEBOOK
+
+CHAPTER \"General\"
+ATTR \"Name\"
+ATTR \"idShort\"
+ATTR \"displayName\"
+ATTR \"description\"
+CHAPTER \"Reference\"
+ATTR \"value\"
+CHAPTER \"Semantic\"
+ATTR \"qualifier\"
+ATTR \"semanticId\"
+ATTR \"supplementalSemanticId\"
+CHAPTER \"Data Specification\"
+ATTR \"dataSpecification\"
+CHAPTER \"Extensions\"
+ATTR \"extension\"
+"
+
+CLASS <SubmodelElementList> : <SubmodelElement>
+
+CLASSATTRIBUTE <ClassAbstract>
+ VALUE 0
+
+ATTRIBUTE <orderRelevant>
+ TYPE ENUMERATION
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <EnumerationDomain>
+ VALUE "True@False"
+
+ATTRIBUTE <semanticIdListElement>
+ TYPE INTERREF
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <AttributeInterRefDomain>
+ VALUE "REFDOMAIN max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"Reference\"
+	max:1"
+
+ATTRIBUTE <typeValueListElement>
+ TYPE ENUMERATION
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <EnumerationDomain>
+ VALUE "AnnotatedRelationshipElement@BasicEventElement@Blob@Capability@DataElement@Entity@EventElement@File@MultiLanguageProperty@Operation@Property@Range@ReferenceElement@RelationshipElement@SubmodelElement@SubmodelElementCollection@SubmodelElementList"
+
+ATTRIBUTE <valueTypeListElement>
+ TYPE ENUMERATION
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <EnumerationDomain>
+ VALUE "xs:string@xs:boolean@xs:decimal@xs:integer@xs:double@xs:float@xs:date@xs:time@xs:dateTime@xs:gYear@xs:gMonth@xs:gDay@xs:gYearMonth@xs:gMonthDay@xs:duration@xs:byte@xs:short@xs:int@xs:long@xs:unsignedByte@xs:unsignedShort@xs:unsignedInt@xs:unsignedLong@xs:positiveInteger@xs:nonNegativeInteger@xs:negativeInteger@xs:nonPositiveInteger@xs:hexBinary@xs:base64Binary@xs:anyURI"
+
+ATTRIBUTE <value>
+ TYPE RECORD
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <RecordClassName>
+ VALUE "submodelElements"
+
+FACET <RecordClassMultiplicity>
+ VALUE 0
+
+CLASSATTRIBUTE <GraphRep>
+ VALUE "GRAPHREP
+SHADOW off
+CLIP_ELLIPSE rx:1.5cm ry:.68cm
+GRADIENT_RECT x:-1.75cm y:-0.75cm w:3.2cm h:1.5cm style:downdiag color1:(rgbval (\"lightskyblue\", 1.4)) color2:(rgbval (\"lightskyblue\", 0.7))
+FILL style:null
+PEN w:0.08cm color:(rgbval (\"lightskyblue\", 0.7)) join:miter
+CLIP_OFF
+ELLIPSE rx:1.5cm ry:.65cm
+FONT color:(col)
+ATTR \"Name\" y:.8cm w:c:2.8cm h:t
+FONT \"Arial\" h:20pt color:black
+TEXT \"List\" y:0.05cm w:c h:c"
+
+CLASSATTRIBUTE <AttrRep>
+ VALUE "NOTEBOOK
+
+CHAPTER \"General\"
+ATTR \"Name\"
+ATTR \"idShort\"
+ATTR \"displayName\"
+ATTR \"description\"
+CHAPTER \"List\"
+ATTR \"orderRelevant\"
+ATTR \"semanticIdListElement\"
+ATTR \"typeValueListElement\"
+ATTR \"valueTypeListElement\"
+ATTR \"value\"
+CHAPTER \"Semantic\"
+ATTR \"qualifier\"
+ATTR \"semanticId\"
+ATTR \"supplementalSemanticId\"
+CHAPTER \"Data Specification\"
+ATTR \"dataSpecification\"
+CHAPTER \"Extensions\"
+ATTR \"extension\"
+"
+
+CLASS <Capability> : <SubmodelElement>
+
+CLASSATTRIBUTE <ClassAbstract>
+ VALUE 0
+
+CLASSATTRIBUTE <GraphRep>
+ VALUE "GRAPHREP
+SHADOW off
+CLIP_ELLIPSE rx:1.5cm ry:.68cm
+GRADIENT_RECT x:-1.75cm y:-0.75cm w:3.2cm h:1.5cm style:downdiag color1:(rgbval (\"lightskyblue\", 1.4)) color2:(rgbval (\"lightskyblue\", 0.7))
+FILL style:null
+PEN w:0.08cm color:(rgbval (\"lightskyblue\", 0.7)) join:miter
+CLIP_OFF
+ELLIPSE rx:1.5cm ry:.65cm
+FONT color:(col)
+ATTR \"Name\" y:.8cm w:c:2.8cm h:t
+FONT \"Arial\" h:20pt color:black
+TEXT \"Capab\" y:0.05cm w:c h:c"
+
+CLASSATTRIBUTE <AttrRep>
+ VALUE "NOTEBOOK
+
+CHAPTER \"General\"
+ATTR \"Name\"
+ATTR \"idShort\"
+ATTR \"displayName\"
+ATTR \"description\"
+CHAPTER \"Semantic\"
+ATTR \"qualifier\"
+ATTR \"semanticId\"
+ATTR \"supplementalSemanticId\"
+CHAPTER \"Data Specification\"
+ATTR \"dataSpecification\"
+CHAPTER \"Extensions\"
+ATTR \"extension\"
+"
+
+CLASS <SubmodelElementCollection> : <SubmodelElement>
+
+CLASSATTRIBUTE <ClassAbstract>
+ VALUE 0
+
+ATTRIBUTE <value>
+ TYPE RECORD
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <RecordClassName>
+ VALUE "submodelElements"
+
+FACET <RecordClassMultiplicity>
+ VALUE 0
+
+CLASSATTRIBUTE <GraphRep>
+ VALUE "GRAPHREP
+SHADOW off
+CLIP_ELLIPSE rx:1.5cm ry:.68cm
+GRADIENT_RECT x:-1.75cm y:-0.75cm w:3.2cm h:1.5cm style:downdiag color1:(rgbval (\"lightskyblue\", 1.4)) color2:(rgbval (\"lightskyblue\", 0.7))
+FILL style:null
+PEN w:0.08cm color:(rgbval (\"lightskyblue\", 0.7)) join:miter
+CLIP_OFF
+ELLIPSE rx:1.5cm ry:.65cm
+FONT color:(col)
+ATTR \"Name\" y:.8cm w:c:2.8cm h:t
+FONT \"Arial\" h:20pt color:black
+TEXT \"Set\" y:0.05cm w:c h:c"
+
+CLASSATTRIBUTE <AttrRep>
+ VALUE "NOTEBOOK
+
+CHAPTER \"General\"
+ATTR \"Name\"
+ATTR \"idShort\"
+ATTR \"displayName\"
+ATTR \"description\"
+CHAPTER \"Collection\"
+ATTR \"value\"
+CHAPTER \"Semantic\"
+ATTR \"qualifier\"
+ATTR \"semanticId\"
+ATTR \"supplementalSemanticId\"
+CHAPTER \"Data Specification\"
+ATTR \"dataSpecification\"
+CHAPTER \"Extensions\"
+ATTR \"extension\"
+"
+
+CLASS <Operation> : <SubmodelElement>
+
+CLASSATTRIBUTE <ClassAbstract>
+ VALUE 0
+
+ATTRIBUTE <inputVariable>
+ TYPE RECORD
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <RecordClassName>
+ VALUE "operationVariables"
+
+FACET <RecordClassMultiplicity>
+ VALUE 0
+
+ATTRIBUTE <outputVariable>
+ TYPE RECORD
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <RecordClassName>
+ VALUE "operationVariables"
+
+FACET <RecordClassMultiplicity>
+ VALUE 0
+
+ATTRIBUTE <inoutputVariable>
+ TYPE RECORD
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <RecordClassName>
+ VALUE "operationVariables"
+
+FACET <RecordClassMultiplicity>
+ VALUE 0
+
+CLASSATTRIBUTE <GraphRep>
+ VALUE "GRAPHREP
+SHADOW off
+CLIP_ELLIPSE rx:1.5cm ry:.68cm
+GRADIENT_RECT x:-1.75cm y:-0.75cm w:3.2cm h:1.5cm style:downdiag color1:(rgbval (\"lightskyblue\", 1.4)) color2:(rgbval (\"lightskyblue\", 0.7))
+FILL style:null
+PEN w:0.08cm color:(rgbval (\"lightskyblue\", 0.7)) join:miter
+CLIP_OFF
+ELLIPSE rx:1.5cm ry:.65cm
+FONT color:(col)
+ATTR \"Name\" y:.8cm w:c:2.8cm h:t
+FONT \"Arial\" h:20pt color:black
+TEXT \"Op\" y:0.05cm w:c h:c"
+
+CLASSATTRIBUTE <AttrRep>
+ VALUE "NOTEBOOK
+
+CHAPTER \"General\"
+ATTR \"Name\"
+ATTR \"idShort\"
+ATTR \"displayName\"
+ATTR \"description\"
+CHAPTER \"Operation\"
+ATTR \"inputVariable\"
+ATTR \"outputVariable\"
+ATTR \"inoutputVariable\"
+CHAPTER \"Semantic\"
+ATTR \"qualifier\"
+ATTR \"semanticId\"
+ATTR \"supplementalSemanticId\"
+CHAPTER \"Data Specification\"
+ATTR \"dataSpecification\"
+CHAPTER \"Extensions\"
+ATTR \"extension\"
+"
+
+CLASS <OperationVariable> : <__D-construct__>
+
+CLASSATTRIBUTE <ClassAbstract>
+ VALUE 0
+
+ATTRIBUTE <value>
+ TYPE INTERREF
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <AttributeInterRefDomain>
+ VALUE "REFDOMAIN max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"RelationshipElement\"
+	max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"AnnotatedRelationshipElement\"
+	max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"Property\"
+	max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"MultiLanguageProperty\"
+	max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"Range\"
+	max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"Blob\"
+	max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"File\"
+	max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"ReferenceElement\"
+	max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"SubmodelElementList\"
+	max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"SubmodelElementCollection\"
+	max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"Capability\"
+	max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"Operation\"
+	max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"Entity\"
+	max:1"
+
+CLASSATTRIBUTE <GraphRep>
+ VALUE "GRAPHREP
+SHADOW off
+CLIP_ELLIPSE rx:1.5cm ry:.68cm
+GRADIENT_RECT x:-1.75cm y:-0.75cm w:3.2cm h:1.5cm style:downdiag color1:(rgbval (\"lightgreen\", 1.4)) color2:(rgbval (\"lightgreen\", 0.7))
+FILL style:null
+PEN w:0.08cm color:(rgbval (\"lightgreen\", 0.7)) join:miter
+CLIP_OFF
+ELLIPSE rx:1.5cm ry:.65cm
+FONT color:(col)
+ATTR \"Name\" y:.8cm w:c:2.8cm h:t
+FONT \"Arial\" h:20pt color:black
+TEXT \"OpVar\" y:0.05cm w:c h:c"
+
+CLASSATTRIBUTE <AttrRep>
+ VALUE "NOTEBOOK
+
+CHAPTER \"General\"
+ATTR \"Name\"
+ATTR \"value\"
+"
+
+CLASS <Entity> : <SubmodelElement>
+
+CLASSATTRIBUTE <ClassAbstract>
+ VALUE 0
+
+ATTRIBUTE <statement>
+ TYPE RECORD
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <RecordClassName>
+ VALUE "submodelElements"
+
+FACET <RecordClassMultiplicity>
+ VALUE 0
+
+ATTRIBUTE <entityType>
+ TYPE ENUMERATION
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <EnumerationDomain>
+ VALUE "CoManagedEntity@SelfManagedEntity"
+
+ATTRIBUTE <globalAssetId>
+ TYPE LONGSTRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <specificAssetId>
+ TYPE INTERREF
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+FACET <AttributeInterRefDomain>
+ VALUE "REFDOMAIN max:1
+OBJREF
+	mt:\"Asset Administration Shell Environment\"
+	c:\"SpecificAssetId\"
+	max:1"
+
+CLASSATTRIBUTE <GraphRep>
+ VALUE "GRAPHREP
+SHADOW off
+CLIP_ELLIPSE rx:1.5cm ry:.68cm
+GRADIENT_RECT x:-1.75cm y:-0.75cm w:3.2cm h:1.5cm style:downdiag color1:(rgbval (\"lightskyblue\", 1.4)) color2:(rgbval (\"lightskyblue\", 0.7))
+FILL style:null
+PEN w:0.08cm color:(rgbval (\"lightskyblue\", 0.7)) join:miter
+CLIP_OFF
+ELLIPSE rx:1.5cm ry:.65cm
+FONT color:(col)
+ATTR \"Name\" y:.8cm w:c:2.8cm h:t
+FONT \"Arial\" h:20pt color:black
+TEXT \"Entity\" y:0.05cm w:c h:c"
+
+CLASSATTRIBUTE <AttrRep>
+ VALUE "NOTEBOOK
+
+CHAPTER \"General\"
+ATTR \"Name\"
+ATTR \"idShort\"
+ATTR \"displayName\"
+ATTR \"description\"
+CHAPTER \"Entity\"
+ATTR \"statement\"
+ATTR \"entityType\"
+ATTR \"globalAssetId\"
+ATTR \"specificAssetId\"
+CHAPTER \"Semantic\"
+ATTR \"qualifier\"
+ATTR \"semanticId\"
+ATTR \"supplementalSemanticId\"
+CHAPTER \"Data Specification\"
+ATTR \"dataSpecification\"
+CHAPTER \"Extensions\"
+ATTR \"extension\"
+"
+
+RELATIONCLASS <derivedFrom>
+FROM <AssetAdministrationShell>
+TO <AssetAdministrationShell>
+
+ATTRIBUTE <Positions>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <GraphRep>
+ TYPE STRING
+ VALUE "GRAPHREP
+SHADOW mode:off
+PEN w:0.02cm
+EDGE
+MIDDLE
+TEXT \"derivedFrom\" x:0.00cm y:0.00cm w:c:2.00cm h:t
+
+END
+FILL color:white
+POLYGON 3 x1:-.4cm y1:.2cm x2:0cm y2:0cm x3:-.4cm y3:-.2cm"
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <AttrRep>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+RELATIONCLASS <hasSubmodel>
+FROM <AssetAdministrationShell>
+TO <Submodel>
+
+ATTRIBUTE <Positions>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <GraphRep>
+ TYPE STRING
+ VALUE "GRAPHREP
+SHADOW mode:off
+PEN w:0.02cm
+EDGE
+MIDDLE
+TEXT \"hasSubmodel\" x:0.00cm y:0.00cm w:c:2.00cm h:t
+
+END
+FILL color:white
+POLYGON 3 x1:-.4cm y1:.2cm x2:0cm y2:0cm x3:-.4cm y3:-.2cm"
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <AttrRep>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+RELATIONCLASS <hasQualifier>
+FROM <Qualifiable>
+TO <Qualifier>
+
+ATTRIBUTE <Positions>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <GraphRep>
+ TYPE STRING
+ VALUE "GRAPHREP
+SHADOW mode:off
+PEN w:0.02cm
+EDGE
+MIDDLE
+TEXT \"hasQualifier\" x:0.00cm y:0.00cm w:c:2.00cm h:t
+
+END
+FILL color:white
+POLYGON 3 x1:-.4cm y1:.2cm x2:0cm y2:0cm x3:-.4cm y3:-.2cm"
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <AttrRep>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+RELATIONCLASS <hasElement>
+FROM <Submodel>
+TO <SubmodelElement>
+
+ATTRIBUTE <Positions>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <GraphRep>
+ TYPE STRING
+ VALUE "GRAPHREP
+SHADOW mode:off
+PEN w:0.02cm
+EDGE
+MIDDLE
+TEXT \"hasElement\" x:0.00cm y:0.00cm w:c:2.00cm h:t
+
+END
+FILL color:white
+POLYGON 3 x1:-.4cm y1:.2cm x2:0cm y2:0cm x3:-.4cm y3:-.2cm"
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <AttrRep>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+RELATIONCLASS <collect>
+FROM <SubmodelElementCollection>
+TO <SubmodelElement>
+
+ATTRIBUTE <Positions>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <GraphRep>
+ TYPE STRING
+ VALUE "GRAPHREP
+SHADOW mode:off
+PEN w:0.02cm
+EDGE
+MIDDLE
+TEXT \"collect\" x:0.00cm y:0.00cm w:c:2.00cm h:t
+
+END
+FILL color:white
+POLYGON 3 x1:-.4cm y1:.2cm x2:0cm y2:0cm x3:-.4cm y3:-.2cm"
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <AttrRep>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+RELATIONCLASS <list>
+FROM <SubmodelElementList>
+TO <SubmodelElement>
+
+ATTRIBUTE <Positions>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <GraphRep>
+ TYPE STRING
+ VALUE "GRAPHREP
+SHADOW mode:off
+PEN w:0.02cm
+EDGE
+MIDDLE
+TEXT \"list\" x:0.00cm y:0.00cm w:c:2.00cm h:t
+
+END
+FILL color:white
+POLYGON 3 x1:-.4cm y1:.2cm x2:0cm y2:0cm x3:-.4cm y3:-.2cm"
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <AttrRep>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+RELATIONCLASS <reference>
+FROM <Referable>
+TO <Reference>
+
+ATTRIBUTE <Positions>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <GraphRep>
+ TYPE STRING
+ VALUE "GRAPHREP
+SHADOW mode:off
+PEN w:0.02cm
+EDGE
+MIDDLE
+TEXT \"reference\" x:0.00cm y:0.00cm w:c:2.00cm h:t
+
+END
+FILL color:white
+POLYGON 3 x1:-.4cm y1:.2cm x2:0cm y2:0cm x3:-.4cm y3:-.2cm"
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+ATTRIBUTE <AttrRep>
+ TYPE STRING
+ VALUE ""
+
+FACET <MultiLineString>
+ VALUE 0
+
+FACET <AttributeHelpText>
+ VALUE ""
+
+FACET <AttributeRegularExpression>
+ VALUE ""
+
+WORKING ENVIRONMENT LIBRARY <AAS Definition v1.0.0 Static>
+
+ATTRIBUTE <Version number>
+VALUE ""
+
+ATTRIBUTE <Date last changed>
+VALUE ""
+
+ATTRIBUTE <Last user>
+VALUE ""
+
+ATTRIBUTE <Keywords>
+VALUE ""
+
+ATTRIBUTE <Comment>
+VALUE ""
+
+ATTRIBUTE <Description>
+VALUE ""
+
+ATTRIBUTE <Modi>
+VALUE ""
+
+ATTRIBUTE <Page layouts>
+VALUE "LAYOUT \"Full page (without header/footer)\"
+PAGE w:p h:p"
+
+ATTRIBUTE <Simmapping>
+VALUE "SIMOPTION undefined"
+
+ATTRIBUTE <Simtext>
+VALUE "SIMTEXT undefined"
+
+ATTRIBUTE <Queries>
+VALUE ""
+
+ATTRIBUTE <Input fields>
+VALUE ""
+
+ATTRIBUTE <AQL commands>
+VALUE ""
+
+ATTRIBUTE <Result attributes>
+VALUE ""
+
+ATTRIBUTE <Relation analysis>
+VALUE ""
+
+ATTRIBUTE <Service>
+VALUE "http://www.adoxx.org
+
+faq@adoxx.org"
+
+ATTRIBUTE <User defined>
+VALUE "yes"
+
+ATTRIBUTE <Library icons>
+VALUE ""
+
+ATTRIBUTE <Evaluation queries>
+VALUE ""
+
+ATTRIBUTE <Evaluation input fields>
+VALUE ""
+
+ATTRIBUTE <Evaluation AQL commands>
+VALUE ""
+
+ATTRIBUTE <Evaluation result attributes>
+VALUE ""
+
+ATTRIBUTE <Sim result mapping>
+VALUE ""
+
+ATTRIBUTE <Numbering>
+VALUE "numeric"
+
+ATTRIBUTE <Graphical representation>
+VALUE "GRAPHREP
+FILL color:aliceblue
+RECTANGLE x:-.3cm y:-.3cm w:.6cm h:.6cm"
+
+ATTRIBUTE <Days per year>
+VALUE 170
+
+ATTRIBUTE <Hours per day>
+VALUE 8
+
+ATTRIBUTE <CCC mapping>
+VALUE ""
+
+ATTRIBUTE <CCC default setting>
+VALUE ""
+
+ATTRIBUTE <Object arrangement>
+VALUE ""
+
+ATTRIBUTE <External coupling>
+VALUE "ON_EVENT \"AppInitialized\"
+{}"
+
+ATTRIBUTE <Agent definition>
+VALUE ""
+
+ATTRIBUTE <Variable check>
+VALUE "off"
+
+ATTRIBUTE <Configuration of documentation>
+VALUE ""
+
+ATTRIBUTE <Default settings>
+VALUE "GRID snap:on visible:off w:0.50cm h:0.50cm
+GRADIENT_PRINTING mode:avg-color"
+
+ATTRIBUTE <Predefined queries>
+VALUE ""
+
+ATTRIBUTE <Predefined evaluation queries>
+VALUE ""
+
+ATTRIBUTE <Dynamic evaluation modules>
+VALUE ""
+
+ATTRIBUTE <Path navigator>
+VALUE ""
+
+ATTRIBUTE <Versioning format>
+VALUE ""
+
+FILE <AAS_Utils.asc>
+CONTENT "UFJPQ0VEVVJFIGdsb2JhbCBBQVNfRVhQT1JUX0pTT04gew0KICBDQyAiQWRvU2NyaXB0IiBJTkZPQk9YICJUTyBCRSBJTVBMRU1FTlRFRCINCn0"
+
