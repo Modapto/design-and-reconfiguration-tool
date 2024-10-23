@@ -7,6 +7,10 @@ The library follow the [ASS standard metamodel specification v3.0.7](https://git
 
 Available at: [BOC Confluence (Internals Only)](https://confluence.boc-group.com/pages/viewpage.action?spaceKey=ADONIS141CUS&title=Metamodel+Fragment+Creation+Module#MetamodelFragmentCreationModule-notebooks)
 
+## Running instance
+
+[https://innovation-laboratory.org/ADONISNP14_1/](https://innovation-laboratory.org/ADONISNP14_1/)
+
 ## Useful links:
 - [Official Documents](https://industrialdigitaltwin.org/en/content-hub/downloads)
 - [Existing ASS Templates](https://industrialdigitaltwin.org/en/content-hub/submodels)
