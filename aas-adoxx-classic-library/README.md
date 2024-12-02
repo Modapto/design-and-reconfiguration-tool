@@ -17,3 +17,4 @@ The library follow the [ASS standard metamodel specification v3.0.7](https://git
 ## Useful links:
 - [Official Documents](https://industrialdigitaltwin.org/en/content-hub/downloads)
 - [Existing ASS Templates](https://industrialdigitaltwin.org/en/content-hub/submodels)
+- [JSON Mapping] (https://github.com/admin-shell-io/aas-specs/tree/master/schemas/json)

@@ -1,0 +1,822 @@
+GENERAL order-of-classes:custom
+
+METHOD graphRep:"Method GraphRep" {
+  GROUP "None" {
+  }
+  GROUP "extended Business Process Model and Notation" {
+    MODELTYPE "Business Process Diagram (BPMN 2.0)"
+    MODELTYPE "Company Map"
+    MODELTYPE "Decision Requirements Diagram"
+    MODELTYPE "Document Model"
+    MODELTYPE "Working Environment Model"
+    MODELTYPE "Flowchart"
+  }
+  GROUP "Event-driven Process Chain" {
+    MODELTYPE "EPC Model"
+    MODELTYPE "Company Map"
+    MODELTYPE "Decision Requirements Diagram"
+    MODELTYPE "Document Model"
+    MODELTYPE "Working Environment Model"
+    MODELTYPE "Flowchart"
+  }
+  GROUP "Entity-Relationship" {
+    MODELTYPE "ER Model"
+  }
+  GROUP "UML" {
+    MODELTYPE "Activity Diagram"
+    MODELTYPE "Class / Object Diagram"
+    MODELTYPE "Classifier Pool"
+    MODELTYPE "Communication Diagram"
+    MODELTYPE "Component Diagram"
+    MODELTYPE "Composite Structure Diagram"
+    MODELTYPE "Deployment Diagram"
+    MODELTYPE "Interaction Overview Diagram"
+    MODELTYPE "Package Diagram"
+    MODELTYPE "Sequence Diagram"
+    MODELTYPE "State Machine Diagram"
+    MODELTYPE "Timing Diagram"
+    MODELTYPE "Use Case Diagram"
+  }
+  GROUP "UML structure diagrams" {
+    MODELTYPE "Class / Object Diagram"
+    MODELTYPE "Classifier Pool"
+    MODELTYPE "Component Diagram"
+    MODELTYPE "Composite Structure Diagram"
+    MODELTYPE "Deployment Diagram"
+    MODELTYPE "Package Diagram"
+  }
+  GROUP "UML behaviour diagrams" {
+    MODELTYPE "Activity Diagram"
+    MODELTYPE "Classifier Pool"
+    MODELTYPE "Communication Diagram"
+    MODELTYPE "Interaction Overview Diagram"
+    MODELTYPE "Sequence Diagram"
+    MODELTYPE "State Machine Diagram"
+    MODELTYPE "Timing Diagram"
+    MODELTYPE "Use Case Diagram"
+  }
+  GROUP "Petri Nets" {
+    MODELTYPE "Petri Net"
+  }
+
+
+  GROUP "Auxiliary" {
+    MODELTYPE "Company Map"
+    MODELTYPE "Decision Requirements Diagram"
+    MODELTYPE "Document Model"
+    MODELTYPE "Flowchart"
+    MODELTYPE "Working Environment Model"
+  }
+  GROUP "Flowcharts" {
+    MODELTYPE "Flowchart"
+  }
+  GROUP "Decision Model and Notation" {
+    MODELTYPE "Decision Requirements Diagram"
+  }
+}
+
+DISPLAYED_MODELATTR "State" default-hidden
+enum-value1:"In process" bitmap1:"db:\\symbol_state_s_draft.bmp"
+enum-value2:"Ready" bitmap2:"db:\\symbol_state_s_qa.bmp"
+enum-value3:"Reviewed" bitmap3:"db:\\symbol_state_s_released.bmp"
+
+
+
+
+
+# BMPN-----------------------------------
+
+MODELTYPE "Business Process Diagram (BPMN 2.0)" plural:"Business Process Diagrams (BPMN 2.0)" from:none bitmap:"db:\\mtico_Bpmn20.bmp" attrrep:"AttrRep_Bpmn20"
+INCL "Pool (BPMN)"
+INCL "Pool (collapsed) (BPMN)"
+INCL "Lane (BPMN)"
+INCL "Start Event (BPMN)"
+INCL "Intermediate Event (boundary) (BPMN)"
+INCL "Intermediate Event (sequence flow) (BPMN)"
+INCL "Intermediate Event (BPMN)"
+INCL "End Event (BPMN)"
+INCL "Task (BPMN)"
+INCL "Sub-Process (BPMN)"
+INCL "Exclusive Gateway (BPMN)"
+INCL "Non-exclusive Gateway (BPMN)"
+INCL "Non-exclusive Gateway (converging) (BPMN)"
+INCL "Data Object (BPMN)"
+INCL "Message (BPMN)"
+INCL "Group (BPMN)"
+INCL "Text Annotation (BPMN)"
+INCL "Conversation (BPMN)"
+INCL "Variable"
+INCL "Random generator"
+INCL "Performance indicator"
+INCL "Performance indicator overview"
+INCL "Relation Node"
+INCL "Aggregation"
+INCL "Note"
+INCL "Subsequent"
+INCL "Message Flow (BPMN)"
+INCL "Association (BPMN)"
+INCL "Data Association (BPMN)"
+INCL "Conversation Link (BPMN)"
+INCL "Sets variable"
+INCL "Sets"
+INCL "Owns"
+INCL "has Note"
+
+MODE "BPMN 2.0 modelling objects" from:all no-documentation
+EXCL "Intermediate Event (boundary) (BPMN)"
+EXCL "Intermediate Event (sequence flow) (BPMN)"
+EXCL "Non-exclusive Gateway (converging) (BPMN)"
+EXCL "Variable"
+EXCL "Random generator"
+EXCL "Performance indicator"
+EXCL "Performance indicator overview"
+EXCL "Sets variable"
+EXCL "Sets"
+EXCL "Owns"
+
+MODE "Simulation" from:all no-documentation
+EXCL "Intermediate Event (boundary) (BPMN)"
+EXCL "Intermediate Event (sequence flow) (BPMN)"
+EXCL "Performance indicator"
+EXCL "Performance indicator overview"
+EXCL "Owns"
+
+MODE "All modelling objects" from:all
+EXCL "Intermediate Event (boundary) (BPMN)"
+EXCL "Intermediate Event (sequence flow) (BPMN)"
+
+MODE "Deprecated elements" from:all
+
+MODE "Documentation" from:all no-modeling
+#----------------------------------------
+
+
+
+
+
+# EPC-----------------------------------
+
+MODELTYPE "EPC Model" plural:"EPC Models" from:none bitmap:"db:\\mtico_EpcModel.bmp" attrrep:"AttrRep_DefaultModelType"
+INCL "Swimlane (vertical)"
+INCL "Swimlane (horizontal)"
+INCL "Start Event (EPC)"
+INCL "Event (EPC)"
+INCL "End Event (EPC)"
+INCL "Function (EPC)"
+INCL "Subprocess (EPC)"
+INCL "XOR operator (EPC)"
+INCL "Parallel fork (EPC)"
+INCL "Parallel merge (EPC)"
+INCL "Organizational unit (EPC)"
+INCL "Information object (EPC)"
+INCL "Variable"
+INCL "Random generator"
+INCL "Relation Node"
+INCL "Aggregation"
+INCL "Note"
+INCL "Subsequent"
+INCL "Executes (EPC)"
+INCL "Input (EPC)"
+INCL "Output (EPC)"
+INCL "Sets variable"
+INCL "Sets"
+INCL "has Note"
+
+MODE "EPC" from:all no-documentation
+EXCL "Start Event (EPC)"
+EXCL "End Event (EPC)"
+EXCL "Parallel merge (EPC)"
+EXCL "Organizational unit (EPC)"
+EXCL "Information object (EPC)"
+EXCL "Variable"
+EXCL "Random generator"
+EXCL "Executes (EPC)"
+EXCL "Input (EPC)"
+EXCL "Output (EPC)"
+EXCL "Sets variable"
+EXCL "Sets"
+
+MODE "eEPC" from:all no-documentation
+EXCL "Start Event (EPC)"
+EXCL "End Event (EPC)"
+EXCL "Parallel merge (EPC)"
+EXCL "Variable"
+EXCL "Random generator"
+EXCL "Sets variable"
+EXCL "Sets"
+
+MODE "Simulation" from:all no-documentation
+
+MODE "All modelling objects" from:all
+
+MODE "Documentation" from:all no-modeling
+#----------------------------------------
+
+
+
+
+
+# ER ------------------------------------
+
+MODELTYPE "ER Model" plural:"ER Models" from:none not-simulateable bitmap:"db:\\mtico_ErModel.bmp" attrrep:"AttrRep_ER"
+INCL "Entity (ER)"
+INCL "Relation (ER)"
+INCL "Attribute (ER)"
+INCL "Relation Node"
+INCL "Aggregation"
+INCL "Note"
+INCL "Links (ER)"
+INCL "has Attribute (ER)"
+INCL "has Note"
+
+MODE "All modelling objects" from:all
+
+MODE "Documentation" from:all no-modeling
+#----------------------------------------
+
+
+
+
+
+# UML -------------------------------------
+
+MODELTYPE "Activity Diagram" plural:"Activity Diagrams" from:none bitmap:"db:\\mtico_UmlActivityDiagram.bmp" attrrep:"AttrRep_DefaultUmlModel"
+INCL "Swimlane (horizontal) (UML)"
+INCL "Swimlane (vertical) (UML)"
+INCL "Initial Node (UML)"
+INCL "Final Node (UML)"
+INCL "Action (UML)"
+INCL "Activity (UML)"
+INCL "Object Node (UML)"
+INCL "Decision/Merge (UML)"
+INCL "Fork (UML)"
+INCL "Join (UML)"
+INCL "Class (UML)"
+INCL "Pin (UML)"
+INCL "Parameterset (UML)"
+INCL "Expansion Region (UML)"
+INCL "Jump Label (UML)"
+INCL "Expansion Node (UML)"
+INCL "Relation Node"
+INCL "Aggregation"
+INCL "Note"
+INCL "Subsequent"
+INCL "Activity Edge (UML)"
+INCL "has Note"
+
+MODE "Not simulateable" from:all
+EXCL "Subsequent"
+
+MODE "Simulateable" from:all
+EXCL "Activity Edge (UML)"
+
+MODE "All modelling objects" from:all
+
+MODE "Documentation" from:all no-modeling
+
+
+
+MODELTYPE "Class / Object Diagram" plural:"Class / Object Diagrams" from:none not-simulateable bitmap:"db:\\mtico_UmlClassDiagram.bmp" attrrep:"AttrRep_DefaultUmlModel"
+INCL "Package (UML)"
+INCL "Class (UML)"
+INCL "Instance Specification (UML)"
+INCL "Interface (UML)"
+INCL "Data Type (UML)"
+INCL "Enumeration (UML)"
+INCL "Constraint (UML)"
+INCL "Relation Node"
+#INCL "Aggregation"
+INCL "Note"
+INCL "Association (UML)"
+INCL "Generalization (UML)"
+INCL "Composition (UML)"
+INCL "Aggregation (UML)"
+INCL "Dependency (UML)"
+INCL "Realization (UML)"
+INCL "requires Interface (UML)"
+INCL "has Constraint (UML)"
+INCL "is Associationclass (UML)"
+INCL "has Note"
+
+MODE "All modelling objects" from:all
+
+MODE "Class Diagram" from:all
+EXCL "Instance Specification (UML)"
+
+MODE "Object Diagram" from:all
+EXCL "Interface (UML)"
+EXCL "Generalization (UML)"
+EXCL "Realization (UML)"
+EXCL "requires Interface (UML)"
+
+MODE "Documentation" from:all no-modeling
+
+
+
+MODELTYPE "Classifier Pool" plural:"Classifier Pools" from:none not-simulateable bitmap:"db:\\mtico_UmlClassifierPoolDiagram.bmp" attrrep:"AttrRep_DefaultUmlModel"
+INCL "Class (UML)"
+INCL "Data Type (UML)"
+INCL "Enumeration (UML)"
+INCL "Interface (UML)"
+INCL "Actor (UML)"
+INCL "Use Case (UML)"
+INCL "Node (UML)"
+INCL "Component (UML)"
+INCL "Artifact (UML)"
+INCL "Property (UML)"
+INCL "Operation (UML)"
+INCL "Parameter (UML)"
+INCL "Aggregation"
+INCL "Note"
+INCL "has Property (UML)"
+INCL "has Operation (UML)"
+INCL "has Parameter (UML)"
+INCL "has Note"
+
+MODE "All modelling objects" from:all
+
+MODE "Documentation" from:all no-modeling
+
+
+
+MODELTYPE "Communication Diagram" plural:"Communication Diagram" from:none not-simulateable bitmap:"db:\\mtico_UmlCommunicationDiagram.bmp" attrrep:"AttrRep_DefaultUmlModel"
+INCL "Interaction Frame (UML)"
+INCL "Lifeline (UML)"
+INCL "Relation Node"
+INCL "Aggregation"
+INCL "Note"
+INCL "Message (UML)"
+INCL "has Note"
+
+MODE "All modelling objects" from:all
+
+MODE "Documentation" from:all no-modeling
+
+
+
+MODELTYPE "Component Diagram" plural:"Component Diagrams" from:none not-simulateable bitmap:"db:\\mtico_UmlComponentDiagram.bmp" attrrep:"AttrRep_DefaultUmlModel"
+INCL "Package (UML)"
+INCL "Component (UML)"
+INCL "Class (UML)"
+INCL "Interface (UML)"
+INCL "Artifact (UML)"
+INCL "Port (UML)"
+INCL "Relation Node"
+INCL "Aggregation"
+INCL "Note"
+INCL "Connector (UML)"
+INCL "Generalization (UML)"
+INCL "Dependency (UML)"
+INCL "Realization (UML)"
+INCL "requires Interface (UML)"
+INCL "is Associationclass (UML)"
+INCL "has Note"
+
+MODE "All modelling objects" from:all
+
+MODE "Documentation" from:all no-modeling
+
+
+
+MODELTYPE "Composite Structure Diagram" plural:"Composite Structure Diagrams" from:none not-simulateable bitmap:"db:\\mtico_UmlCompositeStructureDiagram.bmp" attrrep:"AttrRep_DefaultUmlModel"
+INCL "Class (UML)"
+INCL "Interface (UML)"
+INCL "Collaboration (UML)"
+INCL "Part (UML)"
+INCL "Component (UML)"
+INCL "Port (UML)"
+INCL "Relation Node"
+INCL "Aggregation"
+INCL "Note"
+INCL "Association (UML)"
+INCL "Generalization (UML)"
+INCL "Dependency (UML)"
+INCL "Realization (UML)"
+INCL "requires Interface (UML)"
+INCL "has Note"
+
+MODE "All modelling objects" from:all
+
+MODE "Documentation" from:all no-modeling
+
+
+
+MODELTYPE "Deployment Diagram" plural:"Deployment Diagrams" from:none not-simulateable bitmap:"db:\\mtico_UmlDeploymentDiagram.bmp" attrrep:"AttrRep_DefaultUmlModel"
+INCL "Node (UML)"
+INCL "Component (UML)"
+INCL "Interface (UML)"
+INCL "Artifact (UML)"
+INCL "Deployment Specification (UML)"
+INCL "Relation Node"
+INCL "Aggregation"
+INCL "Note"
+INCL "Association (UML)"
+INCL "Composition (UML)"
+INCL "Aggregation (UML)"
+INCL "Generalization (UML)"
+INCL "Dependency (UML)"
+INCL "Realization (UML)"
+INCL "requires Interface (UML)"
+INCL "has Note"
+
+MODE "All modelling objects" from:all
+
+MODE "Documentation" from:all no-modeling
+
+
+
+MODELTYPE "Interaction Overview Diagram" plural:"Interaction Overview Diagrams" from:none not-simulateable bitmap:"db:\\mtico_UmlInteractionOverviewDiagram.bmp" attrrep:"AttrRep_DefaultUmlModel"
+# Interaction overview
+INCL "Interaction Frame (UML)"
+INCL "Combined Fragment (UML)"
+INCL "Decision/Merge (UML)"
+INCL "Fork (UML)"
+INCL "Join (UML)"
+INCL "Initial Node (UML)"
+INCL "Final Node (UML)"
+INCL "Activity Edge (UML)"
+# Communication diagram
+INCL "Lifeline (UML)"
+INCL "Relation Node"
+INCL "Message (UML)"
+# Sequence diagram
+INCL "Lifeline (UML)"
+INCL "Execution Specification (UML)"
+INCL "Continuation (UML)"
+INCL "State Invariant (UML)"
+INCL "Gate (UML)"
+INCL "Lost/Found Message Node (UML)"
+INCL "Coregion (UML)"
+INCL "Duration Constraint (UML)"
+INCL "Time Constraint (UML)"
+INCL "Destruction Occurrence (UML)"
+# Timing diagram
+INCL "Timing Ruler (UML)"
+INCL "Timeline (UML)"
+INCL "Timing State (UML)"
+INCL "General Value Lifeline (UML)"
+INCL "Message Label (UML)"
+INCL "change State (UML)"
+#General elements
+INCL "Relation Node"
+INCL "Aggregation"
+INCL "Note"
+INCL "has Note"
+
+MODE "All modelling objects" from:all
+
+MODE "Communication Diagram focused" from:none
+INCL "Interaction Frame (UML)"
+INCL "Combined Fragment (UML)"
+INCL "Lifeline (UML)"
+INCL "Fork (UML)"
+INCL "Join (UML)"
+INCL "Decision/Merge (UML)"
+INCL "Initial Node (UML)"
+INCL "Final Node (UML)"
+INCL "Relation Node"
+INCL "Aggregation"
+INCL "Note"
+INCL "Activity Edge (UML)"
+INCL "Message (UML)"
+INCL "has Note"
+
+MODE "Sequence Diagram focused" from:none
+INCL "Interaction Frame (UML)"
+INCL "Combined Fragment (UML)"
+INCL "Lifeline (UML)"
+INCL "Execution Specification (UML)"
+INCL "Continuation (UML)"
+INCL "State Invariant (UML)"
+INCL "Gate (UML)"
+INCL "Coregion (UML)"
+INCL "Duration Constraint (UML)"
+INCL "Time Constraint (UML)"
+INCL "Destruction Occurrence (UML)"
+INCL "Lost/Found Message Node (UML)"
+INCL "Fork (UML)"
+INCL "Join (UML)"
+INCL "Decision/Merge (UML)"
+INCL "Initial Node (UML)"
+INCL "Final Node (UML)"
+INCL "Relation Node"
+INCL "Aggregation"
+INCL "Note"
+INCL "Activity Edge (UML)"
+INCL "Message (UML)"
+INCL "has Note"
+
+MODE "Timing Diagram focused" from:none
+INCL "Interaction Frame (UML)"
+INCL "Combined Fragment (UML)"
+INCL "Timeline (UML)"
+INCL "Timing State (UML)"
+INCL "Timing Ruler (UML)"
+INCL "General Value Lifeline (UML)"
+INCL "Message Label (UML)"
+INCL "Gate (UML)"
+INCL "Time Constraint (UML)"
+INCL "Duration Constraint (UML)"
+INCL "Destruction Occurrence (UML)"
+INCL "Lost/Found Message Node (UML)"
+INCL "Fork (UML)"
+INCL "Join (UML)"
+INCL "Decision/Merge (UML)"
+INCL "Initial Node (UML)"
+INCL "Final Node (UML)"
+INCL "Relation Node"
+INCL "Aggregation"
+INCL "Note"
+INCL "Activity Edge (UML)"
+INCL "change State (UML)"
+INCL "Message (UML)"
+INCL "has Note"
+
+MODE "Documentation" from:all no-modeling
+
+
+
+MODELTYPE "Package Diagram" plural:"Package Diagrams" from:none not-simulateable bitmap:"db:\\mtico_UmlPackageDiagram.bmp" attrrep:"AttrRep_DefaultUmlModel"
+INCL "Package (UML)"
+INCL "Class (UML)"
+INCL "Instance Specification (UML)"
+INCL "Interface (UML)"
+INCL "Data Type (UML)"
+INCL "Enumeration (UML)"
+INCL "Constraint (UML)"
+INCL "Relation Node"
+INCL "Aggregation"
+INCL "Note"
+INCL "Import (UML)"
+INCL "Package merge (UML)"
+INCL "Association (UML)"
+INCL "Generalization (UML)"
+INCL "Dependency (UML)"
+INCL "Realization (UML)"
+INCL "requires Interface (UML)"
+INCL "has Constraint (UML)"
+INCL "is Associationclass (UML)"
+INCL "has Note"
+
+MODE "All modelling objects" from:all
+
+MODE "Documentation" from:all no-modeling
+
+
+
+MODELTYPE "Sequence Diagram" plural:"Sequence Diagrams" from:none not-simulateable bitmap:"db:\\mtico_UmlSequenceDiagram.bmp" attrrep:"AttrRep_DefaultUmlModel"
+INCL "Interaction Frame (UML)"
+INCL "Lifeline (UML)"
+INCL "Execution Specification (UML)"
+INCL "Combined Fragment (UML)"
+INCL "Continuation (UML)"
+INCL "State Invariant (UML)"
+INCL "Gate (UML)"
+INCL "Coregion (UML)"
+INCL "Duration Constraint (UML)"
+INCL "Time Constraint (UML)"
+INCL "Destruction Occurrence (UML)"
+INCL "Lost/Found Message Node (UML)"
+INCL "Relation Node"
+INCL "Aggregation"
+INCL "Note"
+INCL "Message (UML)"
+INCL "has Note"
+
+MODE "All modelling objects" from:all
+
+MODE "Documentation" from:all no-modeling
+
+
+
+MODELTYPE "State Machine Diagram" plural:"State Diagrams" from:none not-simulateable bitmap:"db:\\mtico_UmlStateMachineDiagram.bmp" attrrep:"AttrRep_DefaultUmlModel"
+INCL "State Machine Frame (UML)"
+INCL "Initial Pseudostate (UML)"
+INCL "Entry Point (UML)"
+INCL "History (UML)"
+INCL "Junction (UML)"
+INCL "Exit Point (UML)"
+INCL "Final State (UML)"
+INCL "Terminate (UML)"
+INCL "State (UML)"
+INCL "Region (UML)"
+INCL "Decision/Merge (UML)"
+INCL "Fork (UML)"
+INCL "Join (UML)"
+INCL "Action (UML)"
+INCL "Relation Node"
+INCL "Aggregation"
+INCL "Note"
+INCL "Transition (UML)"
+INCL "Dependency (UML)"
+INCL "has Note"
+
+MODE "All modelling objects" from:all
+
+MODE "Documentation" from:all no-modeling
+
+
+
+MODELTYPE "Timing Diagram" plural:"Timing Diagrams" from:none not-simulateable bitmap:"db:\\mtico_UmlTimingDiagram.bmp" attrrep:"AttrRep_DefaultUmlModel"
+INCL "Timing State (UML)"
+INCL "Lifeline (UML)"
+INCL "Timeline (UML)"
+INCL "Timing Ruler (UML)"
+INCL "General Value Lifeline (UML)"
+INCL "Message Label (UML)"
+INCL "Gate (UML)"
+INCL "Time Constraint (UML)"
+INCL "Duration Constraint (UML)"
+INCL "Destruction Occurrence (UML)"
+INCL "Lost/Found Message Node (UML)"
+INCL "Relation Node"
+INCL "Aggregation"
+INCL "Note"
+INCL "change State (UML)"
+INCL "Message (UML)"
+INCL "has Note"
+
+MODE "All modelling objects" from:all
+
+MODE "Documentation" from:all no-modeling
+
+
+
+MODELTYPE "Use Case Diagram" plural:"Use Case Diagrams" from:none not-simulateable bitmap:"db:\\mtico_UmlUseCaseDiagram.bmp" attrrep:"AttrRep_DefaultUmlModel"
+INCL "Package (UML)"
+INCL "System Boundary (UML)"
+INCL "Actor (UML)"
+INCL "Use Case (UML)"
+INCL "Constraint (UML)"
+INCL "Relation Node"
+INCL "Aggregation"
+INCL "Note"
+INCL "Association (UML)"
+INCL "Generalization (UML)"
+INCL "Dependency (UML)"
+INCL "Extend (UML)"
+INCL "Include (UML)"
+INCL "has Constraint (UML)"
+INCL "has Note"
+
+MODE "All modelling objects" from:all
+
+MODE "Documentation" from:all no-modeling
+#----------------------------------------
+
+
+
+
+
+# Petri Net -----------------------------
+
+MODELTYPE "Petri Net" plural:"Petri Nets" from:none not-simulateable bitmap:"db:\\mtico_PnModel.bmp" attrrep:"AttrRep_PetriNet"
+INCL "Place (PN)"
+INCL "Transition (PN)"
+INCL "Arc (PN)"
+INCL "Simulation Configurator (PN)"
+INCL "Automated Transition Firing (PN)"
+INCL "State Storage (PN)"
+INCL "Aggregation"
+INCL "Note"
+INCL "has Note"
+
+MODE "All modelling objects" from:all
+
+MODE "Documentation" from:all no-modeling
+#----------------------------------------
+
+
+
+
+
+# Additional-----------------------------
+MODELTYPE "Company Map" plural:"Company Maps" from:none not-simulateable bitmap:"db:\\mtico_CompanyMap.bmp" attrrep:"AttrRep_DefaultModelType"
+INCL "Swimlane (vertical)"
+INCL "Swimlane (horizontal)"
+INCL "Process"
+INCL "Performance"
+INCL "Actor"
+INCL "External partner"
+INCL "Performance indicator"
+INCL "Performance indicator overview"
+INCL "Relation Node"
+INCL "Aggregation"
+INCL "Note"
+INCL "has Process"
+INCL "Value Flow"
+INCL "Owns"
+INCL "Is inside"
+INCL "has Note"
+
+MODE "Standard" from:all no-documentation
+EXCL "Performance indicator overview"
+EXCL "Performance indicator"
+EXCL "Owns"
+
+MODE "All modelling objects" from:all
+
+MODE "Documentation" from:all no-modeling
+
+
+
+MODELTYPE "Document Model" plural:"Document Models" from:none not-simulateable bitmap:"db:\\mtico_DocumentModel.bmp" attrrep:"AttrRep_DefaultModelType"
+INCL "Swimlane (vertical)"
+INCL "Swimlane (horizontal)"
+INCL "Document"
+INCL "Relation Node"
+INCL "Aggregation"
+INCL "Note"
+INCL "has Subdocument"
+INCL "has Note"
+
+MODE "All modelling objects" from:all
+
+MODE "Documentation" from:all no-modeling
+
+
+
+MODELTYPE "Flowchart" plural:"Flowcharts" from:none bitmap:"db:\\mtico_FcModel.bmp" attrrep:"AttrRep_Flowchart"
+INCL "Swimlane (vertical)"
+INCL "Swimlane (horizontal)"
+INCL "Start Terminal (FC)"
+INCL "End Terminal (FC)"
+INCL "Operation (FC)"
+INCL "External Operation (FC)"
+INCL "Decision (FC)"
+INCL "Switch (FC)"
+INCL "Relation Node"
+INCL "Aggregation"
+INCL "Note"
+INCL "Subsequent"
+INCL "has Note"
+
+MODE "Flowchart" from:all
+EXCL "Switch (FC)"
+
+MODE "Extended Flowchart" from:all
+
+MODE "All modelling objects" from:all
+
+MODE "Documentation" from:all no-modeling
+
+
+
+MODELTYPE "Decision Requirements Diagram" plural:"Decision Requirements Diagrams" from:none not-simulateable bitmap:"db:\\mtico_DrdModel.bmp" attrrep:"AttrRep_Definitions"
+INCL "Decision (DMN)"
+INCL "Business Knowledge Model (DMN)"
+INCL "Input Data (DMN)"
+INCL "Knowledge Source (DMN)"
+INCL "Boxed Expression (DMN)"
+INCL "Decision Service (DMN)"
+INCL "Text Annotation (BPMN)"
+INCL "Relation Node"
+INCL "Aggregation"
+INCL "Note"
+INCL "Information Requirement (DMN)"
+INCL "Knowledge Requirement (DMN)"
+INCL "Authority Requirement (DMN)"
+INCL "Association (BPMN)"
+INCL "has Note"
+
+MODE "All modelling objects" from:all
+
+MODE "Documentation" from:all no-modeling
+#----------------------------------------
+
+MODELTYPE "Asset Administration Shell Environment"
+INCL "AssetAdministrationShell"
+INCL "ConceptDescription"
+INCL "DataSpecification"
+INCL "Submodel"
+INCL "Qualifier"
+INCL "Reference"
+INCL "Extension"
+INCL "SpecificAssetId"
+INCL "RelationshipElement"
+INCL "AnnotatedRelationshipElement"
+INCL "Property"
+INCL "MultiLanguageProperty"
+INCL "Range"
+INCL "Blob"
+INCL "File"
+INCL "ReferenceElement"
+INCL "SubmodelElementList"
+INCL "SubmodelElementCollection"
+INCL "Capability"
+INCL "Operation"
+INCL "OperationVariable"
+INCL "Entity"
+INCL "derivedFrom"
+INCL "hasSubmodel"
+INCL "hasQualifier"
+INCL "hasElement"
+INCL "collect"
+INCL "list"
+INCL "reference"
+
+MODELTYPE "Data Binding Model" 
+INCL "External Service"
+INCL "Internal Service"
+INCL "FMU"
+MODE "All Objects" from:all

@@ -1,0 +1,2 @@
+lam_toString lam_toBoolean lam_toNumber
+lam_toJson

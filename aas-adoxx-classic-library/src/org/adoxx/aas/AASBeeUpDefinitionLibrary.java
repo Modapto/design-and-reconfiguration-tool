@@ -8,14 +8,15 @@ import org.adoxx.all.api.primitive.TypeIdentifier;
 import org.adoxx.all.api.primitive.Val;
 import org.adoxx.utils.Utils;
 
-public class AASDefinitionLibrary {
+public class AASBeeUpDefinitionLibrary {
     
     public static void main(String[] args) {
         String libraryName = "AAS Definition v1.0.0";
-        String libraryExportPath = AASDefinitionLibrary.class.getProtectionDomain().getCodeSource().getLocation().getFile().replace("classes/", "");
+        String libraryExportPath = AASBeeUpDefinitionLibrary.class.getProtectionDomain().getCodeSource().getLocation().getFile().replace("classes/", "");
         
         try {
-            ADOAllFile lib = ADOLibFactory.generateADOxxEmptyLibrary(libraryName);
+            ADOAllFile lib = ADOLibFactory.loadFromAblFile(libraryExportPath + "..\\src\\org\\adoxx\\aas\\beeup17.abl", true);
+            //ADOAllFile lib = ADOLibFactory.generateADOxxEmptyLibrary(libraryName);
             lib.getApplicationLibraryNew()
 
             .addRecordClass("keys", "RecordClass", new ADOAttribute[] {
@@ -82,10 +83,32 @@ public class AASDefinitionLibrary {
                 new ADOAttribute(false, "valueId", TypeIdentifier.INTERREF).addADOxxDefaultFacets().setFacetValue("AttributeInterRefDomain", new Val("REFDOMAIN max:1\nOBJREF\n\tmt:\"Asset Administration Shell Environment\"\n\tc:\"Reference\"\n\tmax:1"))
             })
 
+            .addRecordClass("Service Inputs", "RecordClass", new ADOAttribute[] {
+                new ADOAttribute(true, "ClassAbstract", new Val(0)),
+                new ADOAttribute(true, "ClassVisible", new Val(1)),
+                new ADOAttribute(true, "AttrRep", new Val("NOTEBOOK\nCHAPTER \"Description\"\nATTR \"ID\"\nATTR \"Schema\"\nATTR \"Sample\"")),
+                new ADOAttribute(false, "ID", TypeIdentifier.STRING, new Val("")).addADOxxDefaultFacets(),
+                new ADOAttribute(false, "Schema", TypeIdentifier.LONGSTRING, new Val("")).addADOxxDefaultFacets(),
+                new ADOAttribute(false, "Sample", TypeIdentifier.LONGSTRING, new Val("")).addADOxxDefaultFacets(),
+            })
+            .addRecordClass("Output Mapping", "RecordClass", new ADOAttribute[] {
+                new ADOAttribute(true, "ClassAbstract", new Val(0)),
+                new ADOAttribute(true, "ClassVisible", new Val(1)),
+                new ADOAttribute(true, "AttrRep", new Val("NOTEBOOK\nCHAPTER \"Description\"\nATTR \"ID\"\nATTR \"Mapping\"\n")),
+                new ADOAttribute(false, "ID", TypeIdentifier.STRING, new Val("")).addADOxxDefaultFacets(),
+                new ADOAttribute(false, "Mapping", TypeIdentifier.STRING, new Val("")).addADOxxDefaultFacets(),
+            })
+            .addRecordClass("REST Additional Headers", "RecordClass", new ADOAttribute[] {
+                new ADOAttribute(true, "ClassAbstract", new Val(0)),
+                new ADOAttribute(true, "ClassVisible", new Val(1)),
+                new ADOAttribute(true, "AttrRep", new Val("NOTEBOOK\nCHAPTER \"Description\"\nATTR \"Header Name\"\nATTR \"Header Value\"")),
+                new ADOAttribute(false, "Header Name", TypeIdentifier.STRING, new Val("")).addADOxxDefaultFacets(),
+                new ADOAttribute(false, "Header Value", TypeIdentifier.STRING, new Val("")).addADOxxDefaultFacets(),
+            })
             .getDynamicLibrary()
                 .addClass(
                     new ADOClass("Referable", ADOClass.defaultSuperIdDynamic)
-                        .addAttribute(new ADOAttribute(false, "Description", TypeIdentifier.LONGSTRING, new Val("")).addADOxxDefaultFacets().setFacetValue("MultiLineString", new Val(1)))
+                        //.addAttribute(new ADOAttribute(false, "Description", TypeIdentifier.LONGSTRING, new Val("")).addADOxxDefaultFacets().setFacetValue("MultiLineString", new Val(1)))
                         .setClassAbrstractAttribute(1)
                 )
                 .addClass(
@@ -155,6 +178,7 @@ public class AASDefinitionLibrary {
                         .addAttribute(new ADOAttribute(false, "creator", TypeIdentifier.LONGSTRING, new Val("")).addADOxxDefaultFacets().setFacetValue("MultiLineString", new Val(0)))
                         .addAttribute(new ADOAttribute(false, "templateId", TypeIdentifier.LONGSTRING, new Val("")).addADOxxDefaultFacets().setFacetValue("MultiLineString", new Val(0)))
                         .addAttribute(new ADOAttribute(false, "id", TypeIdentifier.LONGSTRING, new Val("")).addADOxxDefaultFacets().setFacetValue("MultiLineString", new Val(0)))
+                        .addAttribute(new ADOAttribute(false, "category", TypeIdentifier.STRING, new Val("")).addADOxxDefaultFacets())
                         .addAttribute(new ADOAttribute(false, "idShort", TypeIdentifier.STRING, new Val("")).addADOxxDefaultFacets())
                         .addAttribute(new ADOAttribute(false, "displayName", TypeIdentifier.RECORD).addADOxxDefaultFacets().setFacetValue("RecordClassName", new Val("multiLanguageText")))
                         .addAttribute(new ADOAttribute(false, "description", TypeIdentifier.RECORD).addADOxxDefaultFacets().setFacetValue("RecordClassName", new Val("multiLanguageText")))
@@ -162,7 +186,7 @@ public class AASDefinitionLibrary {
                         .addAttribute(new ADOAttribute(false, "dataSpecification", TypeIdentifier.RECORD).addADOxxDefaultFacets().setFacetValue("RecordClassName", new Val("references")))
                         .addAttribute(new ADOAttribute(false, "isCaseOf", TypeIdentifier.RECORD).addADOxxDefaultFacets().setFacetValue("RecordClassName", new Val("references")))
                         .setGraphRepAttribute("GRAPHREP\nSHADOW off\nFILL color:blue\nELLIPSE x:0.00cm y:0cm rx:1cm ry:1cm\nATTR \"Name\" x:0.00cm y:1.1cm h:t w:c:3cm line-break:words\nPEN\nFONT \"Arial\" h:30pt color:white\nTEXT \"CD\" y:0.1cm w:c h:c")
-                        .setAttrRepAttribute("NOTEBOOK\n\nCHAPTER \"General\"\nATTR \"Name\"\nATTR \"id\"\nATTR \"idShort\"\nATTR \"displayName\"\nATTR \"description\"\nATTR \"isCaseOf\"\nCHAPTER \"Administrative Information\"\nATTR \"version\"\nATTR \"revision\"\nATTR \"creator\"\nATTR \"templateId\"\nCHAPTER \"Data Specification\"\nATTR \"dataSpecification\"\nCHAPTER \"Extensions\"\nATTR \"extension\"\n")
+                        .setAttrRepAttribute("NOTEBOOK\n\nCHAPTER \"General\"\nATTR \"Name\"\nATTR \"id\"\nATTR \"category\"\nATTR \"idShort\"\nATTR \"displayName\"\nATTR \"description\"\nATTR \"isCaseOf\"\nCHAPTER \"Administrative Information\"\nATTR \"version\"\nATTR \"revision\"\nATTR \"creator\"\nATTR \"templateId\"\nCHAPTER \"Data Specification\"\nATTR \"dataSpecification\"\nCHAPTER \"Extensions\"\nATTR \"extension\"\n")
                 )
                 .addClass(
                     new ADOClass("DataSpecification", ADOClass.defaultSuperIdDynamic)
@@ -222,12 +246,13 @@ public class AASDefinitionLibrary {
                         .addAttribute(new ADOAttribute(false, "creator", TypeIdentifier.LONGSTRING, new Val("")).addADOxxDefaultFacets().setFacetValue("MultiLineString", new Val(0)))
                         .addAttribute(new ADOAttribute(false, "templateId", TypeIdentifier.LONGSTRING, new Val("")).addADOxxDefaultFacets().setFacetValue("MultiLineString", new Val(0)))
                         .addAttribute(new ADOAttribute(false, "id", TypeIdentifier.LONGSTRING, new Val("")).addADOxxDefaultFacets().setFacetValue("MultiLineString", new Val(0)))
+                        .addAttribute(new ADOAttribute(false, "category", TypeIdentifier.STRING, new Val("")).addADOxxDefaultFacets())
                         .addAttribute(new ADOAttribute(false, "idShort", TypeIdentifier.STRING, new Val("")).addADOxxDefaultFacets())
                         .addAttribute(new ADOAttribute(false, "displayName", TypeIdentifier.RECORD).addADOxxDefaultFacets().setFacetValue("RecordClassName", new Val("multiLanguageText")))
                         .addAttribute(new ADOAttribute(false, "description", TypeIdentifier.RECORD).addADOxxDefaultFacets().setFacetValue("RecordClassName", new Val("multiLanguageText")))
                         .addAttribute(new ADOAttribute(false, "extension", TypeIdentifier.RECORD).addADOxxDefaultFacets().setFacetValue("RecordClassName", new Val("extensions")))
                         .setGraphRepAttribute("GRAPHREP\nSHADOW off\nFILL color:dodgerblue\nELLIPSE x:0.00cm y:0cm rx:1cm ry:1cm\nATTR \"Name\" x:0.00cm y:1.1cm h:t w:c:3cm line-break:words\nPEN\nFONT \"Arial\" h:30pt color:white\nTEXT \"SM\" y:0.1cm w:c h:c")
-                        .setAttrRepAttribute("NOTEBOOK\n\nCHAPTER \"General\"\nATTR \"Name\"\nATTR \"id\"\nATTR \"submodelElement\"\nATTR \"kind\"\nATTR \"idShort\"\nATTR \"displayName\"\nATTR \"description\"\nCHAPTER \"Semantic\"\nATTR \"qualifier\"\nATTR \"semanticId\"\nATTR \"supplementalSemanticId\"\nCHAPTER \"Administrative Information\"\nATTR \"version\"\nATTR \"revision\"\nATTR \"creator\"\nATTR \"templateId\"\nCHAPTER \"Data Specification\"\nATTR \"dataSpecification\"\nCHAPTER \"Extensions\"\nATTR \"extension\"\n")
+                        .setAttrRepAttribute("NOTEBOOK\n\nCHAPTER \"General\"\nATTR \"Name\"\nATTR \"id\"\nATTR \"submodelElement\"\nATTR \"kind\"\nATTR \"category\"\nATTR \"idShort\"\nATTR \"displayName\"\nATTR \"description\"\nCHAPTER \"Semantic\"\nATTR \"qualifier\"\nATTR \"semanticId\"\nATTR \"supplementalSemanticId\"\nCHAPTER \"Administrative Information\"\nATTR \"version\"\nATTR \"revision\"\nATTR \"creator\"\nATTR \"templateId\"\nCHAPTER \"Data Specification\"\nATTR \"dataSpecification\"\nCHAPTER \"Extensions\"\nATTR \"extension\"\n")
                 )
                 .addClass(
                     new ADOClass("SubmodelElement", "Qualifiable")
@@ -235,6 +260,7 @@ public class AASDefinitionLibrary {
                         .addAttribute(new ADOAttribute(false, "semanticId", TypeIdentifier.INTERREF).addADOxxDefaultFacets().setFacetValue("AttributeInterRefDomain", new Val("REFDOMAIN max:1\nOBJREF\n\tmt:\"Asset Administration Shell Environment\"\n\tc:\"Reference\"\n\tmax:1")))
                         .addAttribute(new ADOAttribute(false, "supplementalSemanticId", TypeIdentifier.RECORD).addADOxxDefaultFacets().setFacetValue("RecordClassName", new Val("references")))
                         .addAttribute(new ADOAttribute(false, "qualifier", TypeIdentifier.RECORD).addADOxxDefaultFacets().setFacetValue("RecordClassName", new Val("qualifiers")))
+                        .addAttribute(new ADOAttribute(false, "category", TypeIdentifier.STRING, new Val("")).addADOxxDefaultFacets())
                         .addAttribute(new ADOAttribute(false, "idShort", TypeIdentifier.STRING, new Val("")).addADOxxDefaultFacets())
                         .addAttribute(new ADOAttribute(false, "displayName", TypeIdentifier.RECORD).addADOxxDefaultFacets().setFacetValue("RecordClassName", new Val("multiLanguageText")))
                         .addAttribute(new ADOAttribute(false, "description", TypeIdentifier.RECORD).addADOxxDefaultFacets().setFacetValue("RecordClassName", new Val("multiLanguageText")))
@@ -247,14 +273,14 @@ public class AASDefinitionLibrary {
                         .addAttribute(new ADOAttribute(false, "first", TypeIdentifier.INTERREF).addADOxxDefaultFacets().setFacetValue("AttributeInterRefDomain", new Val("REFDOMAIN max:1\nOBJREF\n\tmt:\"Asset Administration Shell Environment\"\n\tc:\"Reference\"\n\tmax:1")))
                         .addAttribute(new ADOAttribute(false, "second", TypeIdentifier.INTERREF).addADOxxDefaultFacets().setFacetValue("AttributeInterRefDomain", new Val("REFDOMAIN max:1\nOBJREF\n\tmt:\"Asset Administration Shell Environment\"\n\tc:\"Reference\"\n\tmax:1")))
                         .setGraphRepAttribute("GRAPHREP\nSHADOW off\nCLIP_ELLIPSE rx:1.5cm ry:.68cm\nGRADIENT_RECT x:-1.75cm y:-0.75cm w:3.2cm h:1.5cm style:downdiag color1:(rgbval (\"lightskyblue\", 1.4)) color2:(rgbval (\"lightskyblue\", 0.7))\nFILL style:null\nPEN w:0.08cm color:(rgbval (\"lightskyblue\", 0.7)) join:miter\nCLIP_OFF\nELLIPSE rx:1.5cm ry:.65cm\nFONT color:(col)\nATTR \"Name\" y:.8cm w:c:2.8cm h:t\nFONT \"Arial\" h:20pt color:black\nTEXT \"RE\" y:0.05cm w:c h:c")
-                        .setAttrRepAttribute("NOTEBOOK\n\nCHAPTER \"General\"\nATTR \"Name\"\nATTR \"idShort\"\nATTR \"displayName\"\nATTR \"description\"\nCHAPTER \"Relationship\"\nATTR \"first\"\nATTR \"second\"\nCHAPTER \"Semantic\"\nATTR \"qualifier\"\nATTR \"semanticId\"\nATTR \"supplementalSemanticId\"\nCHAPTER \"Data Specification\"\nATTR \"dataSpecification\"\nCHAPTER \"Extensions\"\nATTR \"extension\"\n")
+                        .setAttrRepAttribute("NOTEBOOK\n\nCHAPTER \"General\"\nATTR \"Name\"\nATTR \"category\"\nATTR \"idShort\"\nATTR \"displayName\"\nATTR \"description\"\nCHAPTER \"Relationship\"\nATTR \"first\"\nATTR \"second\"\nCHAPTER \"Semantic\"\nATTR \"qualifier\"\nATTR \"semanticId\"\nATTR \"supplementalSemanticId\"\nCHAPTER \"Data Specification\"\nATTR \"dataSpecification\"\nCHAPTER \"Extensions\"\nATTR \"extension\"\n")
                 )
                 .addClass(
                     new ADOClass("AnnotatedRelationshipElement", "RelationshipElement")
                         .setClassAbrstractAttribute(0)
                         .addAttribute(new ADOAttribute(false, "dataElement", TypeIdentifier.RECORD).addADOxxDefaultFacets().setFacetValue("RecordClassName", new Val("dataElements")))
                         .setGraphRepAttribute("GRAPHREP\nSHADOW off\nCLIP_ELLIPSE rx:1.5cm ry:.68cm\nGRADIENT_RECT x:-1.75cm y:-0.75cm w:3.2cm h:1.5cm style:downdiag color1:(rgbval (\"lightskyblue\", 1.4)) color2:(rgbval (\"lightskyblue\", 0.7))\nFILL style:null\nPEN w:0.08cm color:(rgbval (\"lightskyblue\", 0.7)) join:miter\nCLIP_OFF\nELLIPSE rx:1.5cm ry:.65cm\nFONT color:(col)\nATTR \"Name\" y:.8cm w:c:2.8cm h:t\nFONT \"Arial\" h:20pt color:black\nTEXT \"Ann RE\" y:0.05cm w:c h:c")
-                        .setAttrRepAttribute("NOTEBOOK\n\nCHAPTER \"General\"\nATTR \"Name\"\nATTR \"idShort\"\nATTR \"displayName\"\nATTR \"description\"\nCHAPTER \"Relationship\"\nATTR \"first\"\nATTR \"second\"\nATTR \"dataElement\"\nCHAPTER \"Semantic\"\nATTR \"qualifier\"\nATTR \"semanticId\"\nATTR \"supplementalSemanticId\"\nCHAPTER \"Data Specification\"\nATTR \"dataSpecification\"\nCHAPTER \"Extensions\"\nATTR \"extension\"\n")
+                        .setAttrRepAttribute("NOTEBOOK\n\nCHAPTER \"General\"\nATTR \"Name\"\nATTR \"category\"\nATTR \"idShort\"\nATTR \"displayName\"\nATTR \"description\"\nCHAPTER \"Relationship\"\nATTR \"first\"\nATTR \"second\"\nATTR \"dataElement\"\nCHAPTER \"Semantic\"\nATTR \"qualifier\"\nATTR \"semanticId\"\nATTR \"supplementalSemanticId\"\nCHAPTER \"Data Specification\"\nATTR \"dataSpecification\"\nCHAPTER \"Extensions\"\nATTR \"extension\"\n")
                 )
                 .addClass(
                     new ADOClass("DataElement", "SubmodelElement")
@@ -267,7 +293,7 @@ public class AASDefinitionLibrary {
                         .addAttribute(new ADOAttribute(false, "value", TypeIdentifier.STRING, new Val("")).addADOxxDefaultFacets())
                         .addAttribute(new ADOAttribute(false, "valueId", TypeIdentifier.INTERREF).addADOxxDefaultFacets().setFacetValue("AttributeInterRefDomain", new Val("REFDOMAIN max:1\nOBJREF\n\tmt:\"Asset Administration Shell Environment\"\n\tc:\"Reference\"\n\tmax:1")))
                         .setGraphRepAttribute("GRAPHREP\nSHADOW off\nCLIP_ELLIPSE rx:1.5cm ry:.68cm\nGRADIENT_RECT x:-1.75cm y:-0.75cm w:3.2cm h:1.5cm style:downdiag color1:(rgbval (\"lightskyblue\", 1.4)) color2:(rgbval (\"lightskyblue\", 0.7))\nFILL style:null\nPEN w:0.08cm color:(rgbval (\"lightskyblue\", 0.7)) join:miter\nCLIP_OFF\nELLIPSE rx:1.5cm ry:.65cm\nFONT color:(col)\nATTR \"Name\" y:.8cm w:c:2.8cm h:t\nFONT \"Arial\" h:20pt color:black\nTEXT \"Prop\" y:0.05cm w:c h:c")
-                        .setAttrRepAttribute("NOTEBOOK\n\nCHAPTER \"General\"\nATTR \"Name\"\nATTR \"idShort\"\nATTR \"displayName\"\nATTR \"description\"\nCHAPTER \"Value\"\nATTR \"valueType\"\nATTR \"value\"\nATTR \"valueId\"\nCHAPTER \"Semantic\"\nATTR \"qualifier\"\nATTR \"semanticId\"\nATTR \"supplementalSemanticId\"\nCHAPTER \"Data Specification\"\nATTR \"dataSpecification\"\nCHAPTER \"Extensions\"\nATTR \"extension\"\n")
+                        .setAttrRepAttribute("NOTEBOOK\n\nCHAPTER \"General\"\nATTR \"Name\"\nATTR \"category\"\nATTR \"idShort\"\nATTR \"displayName\"\nATTR \"description\"\nCHAPTER \"Value\"\nATTR \"valueType\"\nATTR \"value\"\nATTR \"valueId\"\nCHAPTER \"Semantic\"\nATTR \"qualifier\"\nATTR \"semanticId\"\nATTR \"supplementalSemanticId\"\nCHAPTER \"Data Specification\"\nATTR \"dataSpecification\"\nCHAPTER \"Extensions\"\nATTR \"extension\"\n")
                 )
                 .addClass(
                     new ADOClass("MultiLanguageProperty", "DataElement")
@@ -275,7 +301,7 @@ public class AASDefinitionLibrary {
                         .addAttribute(new ADOAttribute(false, "value", TypeIdentifier.RECORD).addADOxxDefaultFacets().setFacetValue("RecordClassName", new Val("multiLanguageText")))
                         .addAttribute(new ADOAttribute(false, "valueId", TypeIdentifier.INTERREF).addADOxxDefaultFacets().setFacetValue("AttributeInterRefDomain", new Val("REFDOMAIN max:1\nOBJREF\n\tmt:\"Asset Administration Shell Environment\"\n\tc:\"Reference\"\n\tmax:1")))
                         .setGraphRepAttribute("GRAPHREP\nSHADOW off\nCLIP_ELLIPSE rx:1.5cm ry:.68cm\nGRADIENT_RECT x:-1.75cm y:-0.75cm w:3.2cm h:1.5cm style:downdiag color1:(rgbval (\"lightskyblue\", 1.4)) color2:(rgbval (\"lightskyblue\", 0.7))\nFILL style:null\nPEN w:0.08cm color:(rgbval (\"lightskyblue\", 0.7)) join:miter\nCLIP_OFF\nELLIPSE rx:1.5cm ry:.65cm\nFONT color:(col)\nATTR \"Name\" y:.8cm w:c:2.8cm h:t\nFONT \"Arial\" h:20pt color:black\nTEXT \"ML Prop\" y:0.05cm w:c h:c")
-                        .setAttrRepAttribute("NOTEBOOK\n\nCHAPTER \"General\"\nATTR \"Name\"\nATTR \"idShort\"\nATTR \"displayName\"\nATTR \"description\"\nCHAPTER \"Value\"\nATTR \"value\"\nATTR \"valueId\"\nCHAPTER \"Semantic\"\nATTR \"qualifier\"\nATTR \"semanticId\"\nATTR \"supplementalSemanticId\"\nCHAPTER \"Data Specification\"\nATTR \"dataSpecification\"\nCHAPTER \"Extensions\"\nATTR \"extension\"\n")
+                        .setAttrRepAttribute("NOTEBOOK\n\nCHAPTER \"General\"\nATTR \"Name\"\nATTR \"category\"\nATTR \"idShort\"\nATTR \"displayName\"\nATTR \"description\"\nCHAPTER \"Value\"\nATTR \"value\"\nATTR \"valueId\"\nCHAPTER \"Semantic\"\nATTR \"qualifier\"\nATTR \"semanticId\"\nATTR \"supplementalSemanticId\"\nCHAPTER \"Data Specification\"\nATTR \"dataSpecification\"\nCHAPTER \"Extensions\"\nATTR \"extension\"\n")
                 )
                 .addClass(
                     new ADOClass("Range", "DataElement")
@@ -284,7 +310,7 @@ public class AASDefinitionLibrary {
                         .addAttribute(new ADOAttribute(false, "min", TypeIdentifier.STRING, new Val("")).addADOxxDefaultFacets())
                         .addAttribute(new ADOAttribute(false, "max", TypeIdentifier.STRING, new Val("")).addADOxxDefaultFacets())
                         .setGraphRepAttribute("GRAPHREP\nSHADOW off\nCLIP_ELLIPSE rx:1.5cm ry:.68cm\nGRADIENT_RECT x:-1.75cm y:-0.75cm w:3.2cm h:1.5cm style:downdiag color1:(rgbval (\"lightskyblue\", 1.4)) color2:(rgbval (\"lightskyblue\", 0.7))\nFILL style:null\nPEN w:0.08cm color:(rgbval (\"lightskyblue\", 0.7)) join:miter\nCLIP_OFF\nELLIPSE rx:1.5cm ry:.65cm\nFONT color:(col)\nATTR \"Name\" y:.8cm w:c:2.8cm h:t\nFONT \"Arial\" h:20pt color:black\nTEXT \"Range\" y:0.05cm w:c h:c")
-                        .setAttrRepAttribute("NOTEBOOK\n\nCHAPTER \"General\"\nATTR \"Name\"\nATTR \"idShort\"\nATTR \"displayName\"\nATTR \"description\"\nCHAPTER \"Value\"\nATTR \"valueType\"\nATTR \"min\"\nATTR \"max\"\nCHAPTER \"Semantic\"\nATTR \"qualifier\"\nATTR \"semanticId\"\nATTR \"supplementalSemanticId\"\nCHAPTER \"Data Specification\"\nATTR \"dataSpecification\"\nCHAPTER \"Extensions\"\nATTR \"extension\"\n")
+                        .setAttrRepAttribute("NOTEBOOK\n\nCHAPTER \"General\"\nATTR \"Name\"\nATTR \"category\"\nATTR \"idShort\"\nATTR \"displayName\"\nATTR \"description\"\nCHAPTER \"Value\"\nATTR \"valueType\"\nATTR \"min\"\nATTR \"max\"\nCHAPTER \"Semantic\"\nATTR \"qualifier\"\nATTR \"semanticId\"\nATTR \"supplementalSemanticId\"\nCHAPTER \"Data Specification\"\nATTR \"dataSpecification\"\nCHAPTER \"Extensions\"\nATTR \"extension\"\n")
                 )
                 .addClass(
                     new ADOClass("Blob", "DataElement")
@@ -292,7 +318,7 @@ public class AASDefinitionLibrary {
                         .addAttribute(new ADOAttribute(false, "value", TypeIdentifier.LONGSTRING, new Val("")).addADOxxDefaultFacets().setFacetValue("MultiLineString", new Val(0)))
                         .addAttribute(new ADOAttribute(false, "contentType", TypeIdentifier.STRING, new Val("")).addADOxxDefaultFacets())
                         .setGraphRepAttribute("GRAPHREP\nSHADOW off\nCLIP_ELLIPSE rx:1.5cm ry:.68cm\nGRADIENT_RECT x:-1.75cm y:-0.75cm w:3.2cm h:1.5cm style:downdiag color1:(rgbval (\"lightskyblue\", 1.4)) color2:(rgbval (\"lightskyblue\", 0.7))\nFILL style:null\nPEN w:0.08cm color:(rgbval (\"lightskyblue\", 0.7)) join:miter\nCLIP_OFF\nELLIPSE rx:1.5cm ry:.65cm\nFONT color:(col)\nATTR \"Name\" y:.8cm w:c:2.8cm h:t\nFONT \"Arial\" h:20pt color:black\nTEXT \"Blob\" y:0.05cm w:c h:c")
-                        .setAttrRepAttribute("NOTEBOOK\n\nCHAPTER \"General\"\nATTR \"Name\"\nATTR \"idShort\"\nATTR \"displayName\"\nATTR \"description\"\nCHAPTER \"Value\"\nATTR \"value\"\nATTR \"contentType\"\nCHAPTER \"Semantic\"\nATTR \"qualifier\"\nATTR \"semanticId\"\nATTR \"supplementalSemanticId\"\nCHAPTER \"Data Specification\"\nATTR \"dataSpecification\"\nCHAPTER \"Extensions\"\nATTR \"extension\"\n")
+                        .setAttrRepAttribute("NOTEBOOK\n\nCHAPTER \"General\"\nATTR \"Name\"\nATTR \"category\"\nATTR \"idShort\"\nATTR \"displayName\"\nATTR \"description\"\nCHAPTER \"Value\"\nATTR \"value\"\nATTR \"contentType\"\nCHAPTER \"Semantic\"\nATTR \"qualifier\"\nATTR \"semanticId\"\nATTR \"supplementalSemanticId\"\nCHAPTER \"Data Specification\"\nATTR \"dataSpecification\"\nCHAPTER \"Extensions\"\nATTR \"extension\"\n")
                 )
                 .addClass(
                     new ADOClass("File", "DataElement")
@@ -300,14 +326,14 @@ public class AASDefinitionLibrary {
                         .addAttribute(new ADOAttribute(false, "value", TypeIdentifier.LONGSTRING, new Val("")).addADOxxDefaultFacets().setFacetValue("MultiLineString", new Val(0)))
                         .addAttribute(new ADOAttribute(false, "contentType", TypeIdentifier.STRING, new Val("")).addADOxxDefaultFacets())
                         .setGraphRepAttribute("GRAPHREP\nSHADOW off\nCLIP_ELLIPSE rx:1.5cm ry:.68cm\nGRADIENT_RECT x:-1.75cm y:-0.75cm w:3.2cm h:1.5cm style:downdiag color1:(rgbval (\"lightskyblue\", 1.4)) color2:(rgbval (\"lightskyblue\", 0.7))\nFILL style:null\nPEN w:0.08cm color:(rgbval (\"lightskyblue\", 0.7)) join:miter\nCLIP_OFF\nELLIPSE rx:1.5cm ry:.65cm\nFONT color:(col)\nATTR \"Name\" y:.8cm w:c:2.8cm h:t\nFONT \"Arial\" h:20pt color:black\nTEXT \"File\" y:0.05cm w:c h:c")
-                        .setAttrRepAttribute("NOTEBOOK\n\nCHAPTER \"General\"\nATTR \"Name\"\nATTR \"idShort\"\nATTR \"displayName\"\nATTR \"description\"\nCHAPTER \"Value\"\nATTR \"value\"\nATTR \"contentType\"\nCHAPTER \"Semantic\"\nATTR \"qualifier\"\nATTR \"semanticId\"\nATTR \"supplementalSemanticId\"\nCHAPTER \"Data Specification\"\nATTR \"dataSpecification\"\nCHAPTER \"Extensions\"\nATTR \"extension\"\n")
+                        .setAttrRepAttribute("NOTEBOOK\n\nCHAPTER \"General\"\nATTR \"Name\"\nATTR \"category\"\nATTR \"idShort\"\nATTR \"displayName\"\nATTR \"description\"\nCHAPTER \"Value\"\nATTR \"value\"\nATTR \"contentType\"\nCHAPTER \"Semantic\"\nATTR \"qualifier\"\nATTR \"semanticId\"\nATTR \"supplementalSemanticId\"\nCHAPTER \"Data Specification\"\nATTR \"dataSpecification\"\nCHAPTER \"Extensions\"\nATTR \"extension\"\n")
                 )
                 .addClass(
                     new ADOClass("ReferenceElement", "DataElement")
                         .setClassAbrstractAttribute(0)
                         .addAttribute(new ADOAttribute(false, "value", TypeIdentifier.INTERREF).addADOxxDefaultFacets().setFacetValue("AttributeInterRefDomain", new Val("REFDOMAIN max:1\nOBJREF\n\tmt:\"Asset Administration Shell Environment\"\n\tc:\"Reference\"\n\tmax:1")))
                         .setGraphRepAttribute("GRAPHREP\nSHADOW off\nCLIP_ELLIPSE rx:1.5cm ry:.68cm\nGRADIENT_RECT x:-1.75cm y:-0.75cm w:3.2cm h:1.5cm style:downdiag color1:(rgbval (\"lightskyblue\", 1.4)) color2:(rgbval (\"lightskyblue\", 0.7))\nFILL style:null\nPEN w:0.08cm color:(rgbval (\"lightskyblue\", 0.7)) join:miter\nCLIP_OFF\nELLIPSE rx:1.5cm ry:.65cm\nFONT color:(col)\nATTR \"Name\" y:.8cm w:c:2.8cm h:t\nFONT \"Arial\" h:20pt color:black\nTEXT \"Ref El\" y:0.05cm w:c h:c")
-                        .setAttrRepAttribute("NOTEBOOK\n\nCHAPTER \"General\"\nATTR \"Name\"\nATTR \"idShort\"\nATTR \"displayName\"\nATTR \"description\"\nCHAPTER \"Reference\"\nATTR \"value\"\nCHAPTER \"Semantic\"\nATTR \"qualifier\"\nATTR \"semanticId\"\nATTR \"supplementalSemanticId\"\nCHAPTER \"Data Specification\"\nATTR \"dataSpecification\"\nCHAPTER \"Extensions\"\nATTR \"extension\"\n")
+                        .setAttrRepAttribute("NOTEBOOK\n\nCHAPTER \"General\"\nATTR \"Name\"\nATTR \"category\"\nATTR \"idShort\"\nATTR \"displayName\"\nATTR \"description\"\nCHAPTER \"Reference\"\nATTR \"value\"\nCHAPTER \"Semantic\"\nATTR \"qualifier\"\nATTR \"semanticId\"\nATTR \"supplementalSemanticId\"\nCHAPTER \"Data Specification\"\nATTR \"dataSpecification\"\nCHAPTER \"Extensions\"\nATTR \"extension\"\n")
                 )
                 .addClass(
                     new ADOClass("SubmodelElementList", "SubmodelElement")
@@ -318,20 +344,20 @@ public class AASDefinitionLibrary {
                         .addAttribute(new ADOAttribute(false, "valueTypeListElement", TypeIdentifier.ENUMERATION).addADOxxDefaultFacets().setFacetValue("EnumerationDomain", new Val("xs:string@xs:boolean@xs:decimal@xs:integer@xs:double@xs:float@xs:date@xs:time@xs:dateTime@xs:gYear@xs:gMonth@xs:gDay@xs:gYearMonth@xs:gMonthDay@xs:duration@xs:byte@xs:short@xs:int@xs:long@xs:unsignedByte@xs:unsignedShort@xs:unsignedInt@xs:unsignedLong@xs:positiveInteger@xs:nonNegativeInteger@xs:negativeInteger@xs:nonPositiveInteger@xs:hexBinary@xs:base64Binary@xs:anyURI")))
                         .addAttribute(new ADOAttribute(false, "value", TypeIdentifier.RECORD).addADOxxDefaultFacets().setFacetValue("RecordClassName", new Val("submodelElements")))
                         .setGraphRepAttribute("GRAPHREP\nSHADOW off\nCLIP_ELLIPSE rx:1.5cm ry:.68cm\nGRADIENT_RECT x:-1.75cm y:-0.75cm w:3.2cm h:1.5cm style:downdiag color1:(rgbval (\"lightskyblue\", 1.4)) color2:(rgbval (\"lightskyblue\", 0.7))\nFILL style:null\nPEN w:0.08cm color:(rgbval (\"lightskyblue\", 0.7)) join:miter\nCLIP_OFF\nELLIPSE rx:1.5cm ry:.65cm\nFONT color:(col)\nATTR \"Name\" y:.8cm w:c:2.8cm h:t\nFONT \"Arial\" h:20pt color:black\nTEXT \"List\" y:0.05cm w:c h:c")
-                        .setAttrRepAttribute("NOTEBOOK\n\nCHAPTER \"General\"\nATTR \"Name\"\nATTR \"idShort\"\nATTR \"displayName\"\nATTR \"description\"\nCHAPTER \"List\"\nATTR \"orderRelevant\"\nATTR \"semanticIdListElement\"\nATTR \"typeValueListElement\"\nATTR \"valueTypeListElement\"\nATTR \"value\"\nCHAPTER \"Semantic\"\nATTR \"qualifier\"\nATTR \"semanticId\"\nATTR \"supplementalSemanticId\"\nCHAPTER \"Data Specification\"\nATTR \"dataSpecification\"\nCHAPTER \"Extensions\"\nATTR \"extension\"\n")
+                        .setAttrRepAttribute("NOTEBOOK\n\nCHAPTER \"General\"\nATTR \"Name\"\nATTR \"category\"\nATTR \"idShort\"\nATTR \"displayName\"\nATTR \"description\"\nCHAPTER \"List\"\nATTR \"orderRelevant\"\nATTR \"semanticIdListElement\"\nATTR \"typeValueListElement\"\nATTR \"valueTypeListElement\"\nATTR \"value\"\nCHAPTER \"Semantic\"\nATTR \"qualifier\"\nATTR \"semanticId\"\nATTR \"supplementalSemanticId\"\nCHAPTER \"Data Specification\"\nATTR \"dataSpecification\"\nCHAPTER \"Extensions\"\nATTR \"extension\"\n")
                 )
                 .addClass(
                     new ADOClass("Capability", "SubmodelElement")
                         .setClassAbrstractAttribute(0)
                         .setGraphRepAttribute("GRAPHREP\nSHADOW off\nCLIP_ELLIPSE rx:1.5cm ry:.68cm\nGRADIENT_RECT x:-1.75cm y:-0.75cm w:3.2cm h:1.5cm style:downdiag color1:(rgbval (\"lightskyblue\", 1.4)) color2:(rgbval (\"lightskyblue\", 0.7))\nFILL style:null\nPEN w:0.08cm color:(rgbval (\"lightskyblue\", 0.7)) join:miter\nCLIP_OFF\nELLIPSE rx:1.5cm ry:.65cm\nFONT color:(col)\nATTR \"Name\" y:.8cm w:c:2.8cm h:t\nFONT \"Arial\" h:20pt color:black\nTEXT \"Capab\" y:0.05cm w:c h:c")
-                        .setAttrRepAttribute("NOTEBOOK\n\nCHAPTER \"General\"\nATTR \"Name\"\nATTR \"idShort\"\nATTR \"displayName\"\nATTR \"description\"\nCHAPTER \"Semantic\"\nATTR \"qualifier\"\nATTR \"semanticId\"\nATTR \"supplementalSemanticId\"\nCHAPTER \"Data Specification\"\nATTR \"dataSpecification\"\nCHAPTER \"Extensions\"\nATTR \"extension\"\n")
+                        .setAttrRepAttribute("NOTEBOOK\n\nCHAPTER \"General\"\nATTR \"Name\"\nATTR \"category\"\nATTR \"idShort\"\nATTR \"displayName\"\nATTR \"description\"\nCHAPTER \"Semantic\"\nATTR \"qualifier\"\nATTR \"semanticId\"\nATTR \"supplementalSemanticId\"\nCHAPTER \"Data Specification\"\nATTR \"dataSpecification\"\nCHAPTER \"Extensions\"\nATTR \"extension\"\n")
                 )
                 .addClass(
                     new ADOClass("SubmodelElementCollection", "SubmodelElement")
                         .setClassAbrstractAttribute(0)
                         .addAttribute(new ADOAttribute(false, "value", TypeIdentifier.RECORD).addADOxxDefaultFacets().setFacetValue("RecordClassName", new Val("submodelElements")))
                         .setGraphRepAttribute("GRAPHREP\nSHADOW off\nCLIP_ELLIPSE rx:1.5cm ry:.68cm\nGRADIENT_RECT x:-1.75cm y:-0.75cm w:3.2cm h:1.5cm style:downdiag color1:(rgbval (\"lightskyblue\", 1.4)) color2:(rgbval (\"lightskyblue\", 0.7))\nFILL style:null\nPEN w:0.08cm color:(rgbval (\"lightskyblue\", 0.7)) join:miter\nCLIP_OFF\nELLIPSE rx:1.5cm ry:.65cm\nFONT color:(col)\nATTR \"Name\" y:.8cm w:c:2.8cm h:t\nFONT \"Arial\" h:20pt color:black\nTEXT \"Set\" y:0.05cm w:c h:c")
-                        .setAttrRepAttribute("NOTEBOOK\n\nCHAPTER \"General\"\nATTR \"Name\"\nATTR \"idShort\"\nATTR \"displayName\"\nATTR \"description\"\nCHAPTER \"Collection\"\nATTR \"value\"\nCHAPTER \"Semantic\"\nATTR \"qualifier\"\nATTR \"semanticId\"\nATTR \"supplementalSemanticId\"\nCHAPTER \"Data Specification\"\nATTR \"dataSpecification\"\nCHAPTER \"Extensions\"\nATTR \"extension\"\n")
+                        .setAttrRepAttribute("NOTEBOOK\n\nCHAPTER \"General\"\nATTR \"Name\"\nATTR \"category\"\nATTR \"idShort\"\nATTR \"displayName\"\nATTR \"description\"\nCHAPTER \"Collection\"\nATTR \"value\"\nCHAPTER \"Semantic\"\nATTR \"qualifier\"\nATTR \"semanticId\"\nATTR \"supplementalSemanticId\"\nCHAPTER \"Data Specification\"\nATTR \"dataSpecification\"\nCHAPTER \"Extensions\"\nATTR \"extension\"\n")
                 )
                 .addClass(
                     new ADOClass("Operation", "SubmodelElement")
@@ -340,7 +366,7 @@ public class AASDefinitionLibrary {
                         .addAttribute(new ADOAttribute(false, "outputVariable", TypeIdentifier.RECORD).addADOxxDefaultFacets().setFacetValue("RecordClassName", new Val("operationVariables")))
                         .addAttribute(new ADOAttribute(false, "inoutputVariable", TypeIdentifier.RECORD).addADOxxDefaultFacets().setFacetValue("RecordClassName", new Val("operationVariables")))
                         .setGraphRepAttribute("GRAPHREP\nSHADOW off\nCLIP_ELLIPSE rx:1.5cm ry:.68cm\nGRADIENT_RECT x:-1.75cm y:-0.75cm w:3.2cm h:1.5cm style:downdiag color1:(rgbval (\"lightskyblue\", 1.4)) color2:(rgbval (\"lightskyblue\", 0.7))\nFILL style:null\nPEN w:0.08cm color:(rgbval (\"lightskyblue\", 0.7)) join:miter\nCLIP_OFF\nELLIPSE rx:1.5cm ry:.65cm\nFONT color:(col)\nATTR \"Name\" y:.8cm w:c:2.8cm h:t\nFONT \"Arial\" h:20pt color:black\nTEXT \"Op\" y:0.05cm w:c h:c")
-                        .setAttrRepAttribute("NOTEBOOK\n\nCHAPTER \"General\"\nATTR \"Name\"\nATTR \"idShort\"\nATTR \"displayName\"\nATTR \"description\"\nCHAPTER \"Operation\"\nATTR \"inputVariable\"\nATTR \"outputVariable\"\nATTR \"inoutputVariable\"\nCHAPTER \"Semantic\"\nATTR \"qualifier\"\nATTR \"semanticId\"\nATTR \"supplementalSemanticId\"\nCHAPTER \"Data Specification\"\nATTR \"dataSpecification\"\nCHAPTER \"Extensions\"\nATTR \"extension\"\n")
+                        .setAttrRepAttribute("NOTEBOOK\n\nCHAPTER \"General\"\nATTR \"Name\"\nATTR \"category\"\nATTR \"idShort\"\nATTR \"displayName\"\nATTR \"description\"\nCHAPTER \"Operation\"\nATTR \"inputVariable\"\nATTR \"outputVariable\"\nATTR \"inoutputVariable\"\nCHAPTER \"Semantic\"\nATTR \"qualifier\"\nATTR \"semanticId\"\nATTR \"supplementalSemanticId\"\nCHAPTER \"Data Specification\"\nATTR \"dataSpecification\"\nCHAPTER \"Extensions\"\nATTR \"extension\"\n")
                 )
                 .addClass(
                     new ADOClass("OperationVariable", ADOClass.defaultSuperIdDynamic)
@@ -358,7 +384,7 @@ public class AASDefinitionLibrary {
                         //.addAttribute(new ADOAttribute(false, "specificAssetId", TypeIdentifier.INTERREF).addADOxxDefaultFacets().setFacetValue("AttributeInterRefDomain", new Val("REFDOMAIN max:1\nOBJREF\n\tmt:\"Asset Administration Shell Environment\"\n\tc:\"SpecificAssetId\"\n\tmax:1")))
                         .addAttribute(new ADOAttribute(false, "specificAssetId", TypeIdentifier.RECORD).addADOxxDefaultFacets().setFacetValue("RecordClassName", new Val("specificAssetIds")))
                         .setGraphRepAttribute("GRAPHREP\nSHADOW off\nCLIP_ELLIPSE rx:1.5cm ry:.68cm\nGRADIENT_RECT x:-1.75cm y:-0.75cm w:3.2cm h:1.5cm style:downdiag color1:(rgbval (\"lightskyblue\", 1.4)) color2:(rgbval (\"lightskyblue\", 0.7))\nFILL style:null\nPEN w:0.08cm color:(rgbval (\"lightskyblue\", 0.7)) join:miter\nCLIP_OFF\nELLIPSE rx:1.5cm ry:.65cm\nFONT color:(col)\nATTR \"Name\" y:.8cm w:c:2.8cm h:t\nFONT \"Arial\" h:20pt color:black\nTEXT \"Entity\" y:0.05cm w:c h:c")
-                        .setAttrRepAttribute("NOTEBOOK\n\nCHAPTER \"General\"\nATTR \"Name\"\nATTR \"idShort\"\nATTR \"displayName\"\nATTR \"description\"\nCHAPTER \"Entity\"\nATTR \"statement\"\nATTR \"entityType\"\nATTR \"globalAssetId\"\nATTR \"specificAssetId\"\nCHAPTER \"Semantic\"\nATTR \"qualifier\"\nATTR \"semanticId\"\nATTR \"supplementalSemanticId\"\nCHAPTER \"Data Specification\"\nATTR \"dataSpecification\"\nCHAPTER \"Extensions\"\nATTR \"extension\"\n")
+                        .setAttrRepAttribute("NOTEBOOK\n\nCHAPTER \"General\"\nATTR \"Name\"\nATTR \"category\"\nATTR \"idShort\"\nATTR \"displayName\"\nATTR \"description\"\nCHAPTER \"Entity\"\nATTR \"statement\"\nATTR \"entityType\"\nATTR \"globalAssetId\"\nATTR \"specificAssetId\"\nCHAPTER \"Semantic\"\nATTR \"qualifier\"\nATTR \"semanticId\"\nATTR \"supplementalSemanticId\"\nCHAPTER \"Data Specification\"\nATTR \"dataSpecification\"\nCHAPTER \"Extensions\"\nATTR \"extension\"\n")
                 )
 
                 .addRelation(
@@ -390,20 +416,63 @@ public class AASDefinitionLibrary {
                         .setGraphRepAttribute("GRAPHREP\nSHADOW mode:off\nPEN w:0.02cm\nEDGE\nMIDDLE\nTEXT \"reference\" x:0.00cm y:0.00cm w:c:2.00cm h:t\n\nEND\nFILL color:white\nPOLYGON 3 x1:-.4cm y1:.2cm x2:0cm y2:0cm x3:-.4cm y3:-.2cm")
                 )
 
-                .setModi(new String(Utils.readFile(AASDefinitionLibrary.class.getResource("Modi.attr").toURI().getPath()), "UTF-8"))
-                .setExternalCoupling(new String(Utils.readFile(AASDefinitionLibrary.class.getResource("ExternalCoupling.asc").toURI().getPath()), "UTF-8"))
+
+                .addClass(
+                    new ADOClass("Service", ADOClass.defaultSuperIdDynamic)
+                        .setClassAbrstractAttribute(1)
+                        //.addAttribute(new ADOAttribute(false, "Service Type", TypeIdentifier.ENUMERATION).addADOxxDefaultFacets().setFacetValue("EnumerationDomain", new Val("FMU@Internal@External")))
+                        .addAttribute(new ADOAttribute(false, "Service Inputs", TypeIdentifier.RECORD).addADOxxDefaultFacets().setFacetValue("RecordClassName", new Val("Service Inputs")))
+                        .addAttribute(new ADOAttribute(false, "Output Schema", TypeIdentifier.LONGSTRING, new Val("")).addADOxxDefaultFacets().setFacetValue("MultiLineString", new Val(1)))
+                        .addAttribute(new ADOAttribute(false, "Output Mapping", TypeIdentifier.RECORD).addADOxxDefaultFacets().setFacetValue("RecordClassName", new Val("Output Mapping")))
+                )
+                .addClass(
+                    new ADOClass("External Service", "Service")
+                        .setClassAbrstractAttribute(0)
+
+                        .addAttribute(new ADOAttribute(false, "Method", TypeIdentifier.ENUMERATION).addADOxxDefaultFacets().setFacetValue("EnumerationDomain", new Val("GET@POST@HEAD@OPTIONS@PUT@DELETE@TRACE")))
+                        .addAttribute(new ADOAttribute(false, "Method", new Val("GET")))
+                        .addAttribute(new ADOAttribute(false, "Content Type", TypeIdentifier.STRING, new Val("")).addADOxxDefaultFacets())
+                        .addAttribute(new ADOAttribute(false, "Additional Headers", TypeIdentifier.RECORD).addADOxxDefaultFacets().setFacetValue("RecordClassName", new Val("REST Additional Headers")))
+                        .addAttribute(new ADOAttribute(false, "Endpoint", TypeIdentifier.STRING, new Val("")).addADOxxDefaultFacets())
+                        .addAttribute(new ADOAttribute(false, "Payload", TypeIdentifier.LONGSTRING, new Val("")).addADOxxDefaultFacets().setFacetValue("MultiLineString", new Val(1)))
+                        
+                        .setGraphRepAttribute("GRAPHREP\nSHADOW off\nSET text:(\"External\")\nAVAL name: \"Name\"\nIF(name = \"\")\n FILL color:\"white\"\n RECTANGLE x:-3cm y:-1.5cm w:6cm h:3cm\n FONT \"Arial\" h:30pt color:black\n TEXT (text) w:c:5cm h:c line-break:words\nELSE\n FILL color:\"white\"\n RECTANGLE x:-1.5cm y:-0.5cm w:3cm h:1cm\n RECTANGLE x:-1.75cm y:-0.3cm w:0.5cm h:0.25cm\n RECTANGLE x:-1.75cm y:0.1cm w:0.5cm h:0.25cm\n ATTR \"Name\" x:0.00cm y:0.7cm h:t w:c:3cm line-break:words\n FONT \"Arial\" h:10pt color:black\n TEXT (text) w:c:2.4cm h:c line-break:words\nENDIF")
+                        .setAttrRepAttribute("NOTEBOOK\n\nCHAPTER \"Description\"\nATTR \"Name\"\nATTR \"Description\"\n\nCHAPTER \"I/O\"\nATTR \"Service Inputs\"\nATTR \"Output Schema\"\nATTR \"Output Mapping\"\n\nCHAPTER \"REST\"\nATTR \"Method\"\nATTR \"Content Type\"\nATTR \"Additional Headers\"\nATTR \"Endpoint\"\nATTR \"Payload\"")
+                )
+                .addClass(
+                    new ADOClass("Internal Service", "Service")
+                        .setClassAbrstractAttribute(0)
+                        .addAttribute(new ADOAttribute(false, "Container Image", TypeIdentifier.STRING, new Val("")).addADOxxDefaultFacets())
+                        .addAttribute(new ADOAttribute(false, "Container Port", TypeIdentifier.INTEGER, new Val(8080)).addADOxxDefaultFacets())
+
+                        .addAttribute(new ADOAttribute(false, "Method", TypeIdentifier.ENUMERATION).addADOxxDefaultFacets().setFacetValue("EnumerationDomain", new Val("GET@POST@HEAD@OPTIONS@PUT@DELETE@TRACE")))
+                        .addAttribute(new ADOAttribute(false, "Method", new Val("GET")))
+                        .addAttribute(new ADOAttribute(false, "Content Type", TypeIdentifier.STRING, new Val("")).addADOxxDefaultFacets())
+                        .addAttribute(new ADOAttribute(false, "Additional Headers", TypeIdentifier.RECORD).addADOxxDefaultFacets().setFacetValue("RecordClassName", new Val("REST Additional Headers")))
+                        .addAttribute(new ADOAttribute(false, "Endpoint", TypeIdentifier.STRING, new Val("")).addADOxxDefaultFacets())
+                        .addAttribute(new ADOAttribute(false, "Payload", TypeIdentifier.LONGSTRING, new Val("")).addADOxxDefaultFacets().setFacetValue("MultiLineString", new Val(1)))
+                        
+                        .setGraphRepAttribute("GRAPHREP\nSHADOW off\nSET text:(\"Internal\")\nAVAL name: \"Name\"\nIF(name = \"\")\n FILL color:\"white\"\n RECTANGLE x:-3cm y:-1.5cm w:6cm h:3cm\n FONT \"Arial\" h:30pt color:black\n TEXT (text) w:c:5cm h:c line-break:words\nELSE\n FILL color:\"white\"\n RECTANGLE x:-1.5cm y:-0.5cm w:3cm h:1cm\n RECTANGLE x:-1.75cm y:-0.3cm w:0.5cm h:0.25cm\n RECTANGLE x:-1.75cm y:0.1cm w:0.5cm h:0.25cm\n ATTR \"Name\" x:0.00cm y:0.7cm h:t w:c:3cm line-break:words\n FONT \"Arial\" h:10pt color:black\n TEXT (text) w:c:2.4cm h:c line-break:words\nENDIF")
+                        .setAttrRepAttribute("NOTEBOOK\n\nCHAPTER \"Description\"\nATTR \"Name\"\nATTR \"Description\"\n\nCHAPTER \"Container\"\nATTR \"Container Image\"\nATTR \"Container Port\"\nCHAPTER \"I/O\"\nATTR \"Service Inputs\"\nATTR \"Output Schema\"\nATTR \"Output Mapping\"\n\nCHAPTER \"REST\"\nATTR \"Method\"\nATTR \"Content Type\"\nATTR \"Additional Headers\"\nATTR \"Endpoint\"\nATTR \"Payload\"")
+                )
+                .addClass(
+                    new ADOClass("FMU", "Service")
+                        .setClassAbrstractAttribute(0)
+
+                        .addAttribute(new ADOAttribute(false, "FMU", TypeIdentifier.LONGSTRING, new Val("")).addADOxxDefaultFacets().setFacetValue("MultiLineString", new Val(1)))
+
+                        .setGraphRepAttribute("GRAPHREP\nSHADOW off\nSET text:(\"FMU\")\nAVAL name: \"Name\"\nIF(name = \"\")\n FILL color:\"white\"\n RECTANGLE x:-3cm y:-1.5cm w:6cm h:3cm\n FONT \"Arial\" h:30pt color:black\n TEXT (text) w:c:5cm h:c line-break:words\nELSE\n FILL color:\"white\"\n RECTANGLE x:-1.5cm y:-0.5cm w:3cm h:1cm\n RECTANGLE x:-1.75cm y:-0.3cm w:0.5cm h:0.25cm\n RECTANGLE x:-1.75cm y:0.1cm w:0.5cm h:0.25cm\n ATTR \"Name\" x:0.00cm y:0.7cm h:t w:c:3cm line-break:words\n FONT \"Arial\" h:10pt color:black\n TEXT (text) w:c:2.4cm h:c line-break:words\nENDIF")
+                        .setAttrRepAttribute("NOTEBOOK\n\nCHAPTER \"Description\"\nATTR \"Name\"\nATTR \"Description\"\n\nCHAPTER \"FMU\"\nATTR \"FMU\"")
+                )
+                .setModi(new String(Utils.readFile(AASBeeUpDefinitionLibrary.class.getResource("Modi-beeup.attr").toURI().getPath()), "UTF-8"))
+                .setExternalCoupling(new String(Utils.readFile(AASBeeUpDefinitionLibrary.class.getResource("ExternalCoupling-beeup.asc").toURI().getPath()), "UTF-8"))
             ;
 
-            lib.getApplicationLibraryNew().addFilePath("AdoScriptExtendedConversions.EMfunctions", AASDefinitionLibrary.class.getResource("AdoScriptExtendedConversions.EMfunctions").toURI().getPath());
-            lib.getApplicationLibraryNew().addFilePath("AdoScriptExtendedConversions.EMvariables", AASDefinitionLibrary.class.getResource("AdoScriptExtendedConversions.EMvariables").toURI().getPath());
-            lib.getApplicationLibraryNew().addFilePath("ASC_GlobalFunctions_Conversion.asc", AASDefinitionLibrary.class.getResource("ASC_GlobalFunctions_Conversion.asc").toURI().getPath());
-            lib.getApplicationLibraryNew().addFilePath("ASC_GlobalFunctions_JSON.asc", AASDefinitionLibrary.class.getResource("ASC_GlobalFunctions_JSON.asc").toURI().getPath());
+            lib.getApplicationLibraryNew().addFilePath("ADO2BPMN_v0.5.asc", AASBeeUpDefinitionLibrary.class.getResource("ADO2BPMN_v0.5.asc").toURI().getPath());
+            lib.getApplicationLibraryNew().addFilePath("ADO2BPMN_v0.5.xsl", AASBeeUpDefinitionLibrary.class.getResource("ADO2BPMN_v0.5.xsl").toURI().getPath());
 
-            lib.getApplicationLibraryNew().addFilePath("ADO2BPMN_v0.5.asc", AASDefinitionLibrary.class.getResource("ADO2BPMN_v0.5.asc").toURI().getPath());
-            lib.getApplicationLibraryNew().addFilePath("ADO2BPMN_v0.5.xsl", AASDefinitionLibrary.class.getResource("ADO2BPMN_v0.5.xsl").toURI().getPath());
-
-            lib.getApplicationLibraryNew().addFilePath("aas.json", AASDefinitionLibrary.class.getResource("aas.json").toURI().getPath());
-            lib.getApplicationLibraryNew().addFilePath("AAS_Utils.asc", AASDefinitionLibrary.class.getResource("AAS_Utils.asc").toURI().getPath());
+            lib.getApplicationLibraryNew().addFilePath("aas.json", AASBeeUpDefinitionLibrary.class.getResource("aas.json").toURI().getPath());
+            lib.getApplicationLibraryNew().addFilePath("AAS_Utils.asc", AASBeeUpDefinitionLibrary.class.getResource("AAS_Utils.asc").toURI().getPath());
             
             lib.generateDB("adoDBOLIVE", "eM4-EjwV-CKbRaaOSi5mGwZuErVT6v9CAKEwvRGl", "D41010EE328888ACDE410ADBABCFDC3AFF1B264E0162C5C3D0F27235E65110B8");
             if(libraryExportPath!=null && !libraryExportPath.isEmpty()) {
