@@ -167,8 +167,10 @@ public class AASBeeUpDefinitionLibrary {
                         .addAttribute(new ADOAttribute(false, "displayName", TypeIdentifier.RECORD).addADOxxDefaultFacets().setFacetValue("RecordClassName", new Val("multiLanguageText")))
                         .addAttribute(new ADOAttribute(false, "description", TypeIdentifier.RECORD).addADOxxDefaultFacets().setFacetValue("RecordClassName", new Val("multiLanguageText")))
                         .addAttribute(new ADOAttribute(false, "extension", TypeIdentifier.RECORD).addADOxxDefaultFacets().setFacetValue("RecordClassName", new Val("extensions")))
+                        .addAttribute(new ADOAttribute(false, "publishId", TypeIdentifier.STRING, new Val("")).addADOxxDefaultFacets())
+
                         .setGraphRepAttribute("GRAPHREP\nSHADOW off\nSET text:(\"AAS\")\nAVAL name: \"Name\"\nFILL color:\"white\"\nRECTANGLE x:-1cm y:-0.5cm w:2cm h:1cm\nATTR \"Name\" x:0.00cm y:0.7cm h:t w:c:2cm line-break:words\nFONT \"Arial\" h:20pt color:black\nTEXT (text) w:c:1cm h:c line-break:words\n")
-                        .setAttrRepAttribute("NOTEBOOK\n\nCHAPTER \"General\"\nATTR \"Name\"\nATTR \"id\"\nATTR \"derivedFrom\"\nATTR \"submodels\"\nATTR \"category\"\nATTR \"idShort\"\nATTR \"displayName\"\nATTR \"description\"\nCHAPTER \"Asset Information\"\nATTR \"assetKind\"\nATTR \"specificAssetId\"\nATTR \"globalAssetId\"\nATTR \"assetType\"\nATTR \"defaultThumbnail_path\"\nATTR \"defaultThumbnail_contentType\"\nCHAPTER \"Administrative Information\"\nATTR \"version\"\nATTR \"revision\"\nATTR \"creator\"\nATTR \"templateId\"\nCHAPTER \"Data Specification\"\nATTR \"dataSpecification\"\nCHAPTER \"Extensions\"\nATTR \"extension\"\n")
+                        .setAttrRepAttribute("NOTEBOOK\n\nCHAPTER \"General\"\nATTR \"Name\"\nATTR \"id\"\nATTR \"derivedFrom\"\nATTR \"submodels\"\nATTR \"category\"\nATTR \"idShort\"\nATTR \"displayName\"\nATTR \"description\"\nCHAPTER \"Asset Information\"\nATTR \"assetKind\"\nATTR \"specificAssetId\"\nATTR \"globalAssetId\"\nATTR \"assetType\"\nATTR \"defaultThumbnail_path\"\nATTR \"defaultThumbnail_contentType\"\nCHAPTER \"Administrative Information\"\nATTR \"version\"\nATTR \"revision\"\nATTR \"creator\"\nATTR \"templateId\"\nCHAPTER \"Data Specification\"\nATTR \"dataSpecification\"\nCHAPTER \"Extensions\"\nATTR \"extension\"\nCHAPTER \"Publish\"\nATTR \"publishId\"\n")
                 )
                 .addClass(
                     new ADOClass("ConceptDescription", ADOClass.defaultSuperIdDynamic)
@@ -416,7 +418,13 @@ public class AASBeeUpDefinitionLibrary {
                         .setGraphRepAttribute("GRAPHREP\nSHADOW mode:off\nPEN w:0.02cm\nEDGE\nMIDDLE\nTEXT \"reference\" x:0.00cm y:0.00cm w:c:2.00cm h:t\n\nEND\nFILL color:white\nPOLYGON 3 x1:-.4cm y1:.2cm x2:0cm y2:0cm x3:-.4cm y3:-.2cm")
                 )
 
-
+                .addClass(
+                    new ADOClass("AAS Reference", ADOClass.defaultSuperIdDynamic)
+                        .setClassAbrstractAttribute(0)
+                        .addAttribute(new ADOAttribute(false, "Reference", TypeIdentifier.INTERREF).addADOxxDefaultFacets().setFacetValue("AttributeInterRefDomain", new Val("REFDOMAIN max:1\nOBJREF\n\tmt:\"Asset Administration Shell Environment\"\n\tc:\"AssetAdministrationShell\"\n\tmax:1")))
+                        .setGraphRepAttribute("GRAPHREP\nSHADOW off\nCLIP_POLY 3 x1:0.2cm y1:0.0cm x2:-0.3cm y2:0.3cm x3:-0.3cm y3:-0.3cm\nGRADIENT_RECT x:-0.7cm y:-0.7cm w:1.4cm h:1.4cm style:updiag color1:(\"white\") color2:(\"blue\")\nCLIP_OFF\nPEN w:0.05cm color:(\"royalblue\") join:miter\nFILL style:null\nPOLYGON 3 x1:0.2cm y1:0.0cm x2:-0.3cm y2:0.3cm x3:-0.3cm y3:-0.3cm\nATTR \"Name\" x:0.0cm y:0.35cm w:c:2.0cm h:t line-break:words")
+                        .setAttrRepAttribute("NOTEBOOK\n\nCHAPTER \"General\"\nATTR \"Name\"\nATTR \"Reference\"\n")
+                )
                 .addClass(
                     new ADOClass("Service", ADOClass.defaultSuperIdDynamic)
                         .setClassAbrstractAttribute(1)
@@ -424,6 +432,14 @@ public class AASBeeUpDefinitionLibrary {
                         .addAttribute(new ADOAttribute(false, "Service Inputs", TypeIdentifier.RECORD).addADOxxDefaultFacets().setFacetValue("RecordClassName", new Val("Service Inputs")))
                         .addAttribute(new ADOAttribute(false, "Output Schema", TypeIdentifier.LONGSTRING, new Val("")).addADOxxDefaultFacets().setFacetValue("MultiLineString", new Val(1)))
                         .addAttribute(new ADOAttribute(false, "Output Mapping", TypeIdentifier.RECORD).addADOxxDefaultFacets().setFacetValue("RecordClassName", new Val("Output Mapping")))
+                        .addAttribute(new ADOAttribute(false, "publishId", TypeIdentifier.STRING, new Val("")).addADOxxDefaultFacets())
+                        .addAttribute(new ADOAttribute(false, "catalogueId", TypeIdentifier.STRING, new Val("")).addADOxxDefaultFacets())
+
+
+                )
+                .addRelation(
+                    new ADORelation("binding", "AAS Reference", "Service")
+                        .setGraphRepAttribute("GRAPHREP\nSHADOW mode:off\nPEN w:0.02cm\nEDGE\nMIDDLE\nTEXT \"bind\" x:0.00cm y:0.00cm w:c:2.00cm h:t\n\nEND\nFILL color:white\nPOLYGON 3 x1:-.4cm y1:.2cm x2:0cm y2:0cm x3:-.4cm y3:-.2cm")
                 )
                 .addClass(
                     new ADOClass("External Service", "Service")
@@ -437,7 +453,7 @@ public class AASBeeUpDefinitionLibrary {
                         .addAttribute(new ADOAttribute(false, "Payload", TypeIdentifier.LONGSTRING, new Val("")).addADOxxDefaultFacets().setFacetValue("MultiLineString", new Val(1)))
                         
                         .setGraphRepAttribute("GRAPHREP\nSHADOW off\nSET text:(\"External\")\nAVAL name: \"Name\"\nIF(name = \"\")\n FILL color:\"white\"\n RECTANGLE x:-3cm y:-1.5cm w:6cm h:3cm\n FONT \"Arial\" h:30pt color:black\n TEXT (text) w:c:5cm h:c line-break:words\nELSE\n FILL color:\"white\"\n RECTANGLE x:-1.5cm y:-0.5cm w:3cm h:1cm\n RECTANGLE x:-1.75cm y:-0.3cm w:0.5cm h:0.25cm\n RECTANGLE x:-1.75cm y:0.1cm w:0.5cm h:0.25cm\n ATTR \"Name\" x:0.00cm y:0.7cm h:t w:c:3cm line-break:words\n FONT \"Arial\" h:10pt color:black\n TEXT (text) w:c:2.4cm h:c line-break:words\nENDIF")
-                        .setAttrRepAttribute("NOTEBOOK\n\nCHAPTER \"Description\"\nATTR \"Name\"\nATTR \"Description\"\n\nCHAPTER \"I/O\"\nATTR \"Service Inputs\"\nATTR \"Output Schema\"\nATTR \"Output Mapping\"\n\nCHAPTER \"REST\"\nATTR \"Method\"\nATTR \"Content Type\"\nATTR \"Additional Headers\"\nATTR \"Endpoint\"\nATTR \"Payload\"")
+                        .setAttrRepAttribute("NOTEBOOK\n\nCHAPTER \"Description\"\nATTR \"Name\"\nATTR \"Description\"\nATTR \"catalogueId\"\n\nCHAPTER \"I/O\"\nATTR \"Service Inputs\"\nATTR \"Output Schema\"\nATTR \"Output Mapping\"\n\nCHAPTER \"REST\"\nATTR \"Method\"\nATTR \"Content Type\"\nATTR \"Additional Headers\"\nATTR \"Endpoint\"\nATTR \"Payload\"\nCHAPTER \"Publish\"\nATTR\"publishId\"\n")
                 )
                 .addClass(
                     new ADOClass("Internal Service", "Service")
@@ -453,7 +469,7 @@ public class AASBeeUpDefinitionLibrary {
                         .addAttribute(new ADOAttribute(false, "Payload", TypeIdentifier.LONGSTRING, new Val("")).addADOxxDefaultFacets().setFacetValue("MultiLineString", new Val(1)))
                         
                         .setGraphRepAttribute("GRAPHREP\nSHADOW off\nSET text:(\"Internal\")\nAVAL name: \"Name\"\nIF(name = \"\")\n FILL color:\"white\"\n RECTANGLE x:-3cm y:-1.5cm w:6cm h:3cm\n FONT \"Arial\" h:30pt color:black\n TEXT (text) w:c:5cm h:c line-break:words\nELSE\n FILL color:\"white\"\n RECTANGLE x:-1.5cm y:-0.5cm w:3cm h:1cm\n RECTANGLE x:-1.75cm y:-0.3cm w:0.5cm h:0.25cm\n RECTANGLE x:-1.75cm y:0.1cm w:0.5cm h:0.25cm\n ATTR \"Name\" x:0.00cm y:0.7cm h:t w:c:3cm line-break:words\n FONT \"Arial\" h:10pt color:black\n TEXT (text) w:c:2.4cm h:c line-break:words\nENDIF")
-                        .setAttrRepAttribute("NOTEBOOK\n\nCHAPTER \"Description\"\nATTR \"Name\"\nATTR \"Description\"\n\nCHAPTER \"Container\"\nATTR \"Container Image\"\nATTR \"Container Port\"\nCHAPTER \"I/O\"\nATTR \"Service Inputs\"\nATTR \"Output Schema\"\nATTR \"Output Mapping\"\n\nCHAPTER \"REST\"\nATTR \"Method\"\nATTR \"Content Type\"\nATTR \"Additional Headers\"\nATTR \"Endpoint\"\nATTR \"Payload\"")
+                        .setAttrRepAttribute("NOTEBOOK\n\nCHAPTER \"Description\"\nATTR \"Name\"\nATTR \"Description\"\nATTR \"catalogueId\"\n\nCHAPTER \"Container\"\nATTR \"Container Image\"\nATTR \"Container Port\"\nCHAPTER \"I/O\"\nATTR \"Service Inputs\"\nATTR \"Output Schema\"\nATTR \"Output Mapping\"\n\nCHAPTER \"REST\"\nATTR \"Method\"\nATTR \"Content Type\"\nATTR \"Additional Headers\"\nATTR \"Endpoint\"\nATTR \"Payload\"\nCHAPTER \"Publish\"\nATTR\"publishId\"\n")
                 )
                 .addClass(
                     new ADOClass("FMU", "Service")
@@ -462,14 +478,14 @@ public class AASBeeUpDefinitionLibrary {
                         .addAttribute(new ADOAttribute(false, "FMU", TypeIdentifier.LONGSTRING, new Val("")).addADOxxDefaultFacets().setFacetValue("MultiLineString", new Val(1)))
 
                         .setGraphRepAttribute("GRAPHREP\nSHADOW off\nSET text:(\"FMU\")\nAVAL name: \"Name\"\nIF(name = \"\")\n FILL color:\"white\"\n RECTANGLE x:-3cm y:-1.5cm w:6cm h:3cm\n FONT \"Arial\" h:30pt color:black\n TEXT (text) w:c:5cm h:c line-break:words\nELSE\n FILL color:\"white\"\n RECTANGLE x:-1.5cm y:-0.5cm w:3cm h:1cm\n RECTANGLE x:-1.75cm y:-0.3cm w:0.5cm h:0.25cm\n RECTANGLE x:-1.75cm y:0.1cm w:0.5cm h:0.25cm\n ATTR \"Name\" x:0.00cm y:0.7cm h:t w:c:3cm line-break:words\n FONT \"Arial\" h:10pt color:black\n TEXT (text) w:c:2.4cm h:c line-break:words\nENDIF")
-                        .setAttrRepAttribute("NOTEBOOK\n\nCHAPTER \"Description\"\nATTR \"Name\"\nATTR \"Description\"\n\nCHAPTER \"FMU\"\nATTR \"FMU\"")
+                        .setAttrRepAttribute("NOTEBOOK\n\nCHAPTER \"Description\"\nATTR \"Name\"\nATTR \"Description\"\nATTR \"catalogueId\"\n\nCHAPTER \"FMU\"\nATTR \"FMU\"\nCHAPTER \"Publish\"\nATTR\"publishId\"\n")
                 )
                 .setModi(new String(Utils.readFile(AASBeeUpDefinitionLibrary.class.getResource("Modi-beeup.attr").toURI().getPath()), "UTF-8"))
                 .setExternalCoupling(new String(Utils.readFile(AASBeeUpDefinitionLibrary.class.getResource("ExternalCoupling-beeup.asc").toURI().getPath()), "UTF-8"))
 
                 .getClassDefinition("Task (BPMN)")
                     .addAttribute(new ADOAttribute(false, "AAS Submodel", TypeIdentifier.INTERREF).addADOxxDefaultFacets().setFacetValue("AttributeInterRefDomain", new Val("REFDOMAIN max:1\nOBJREF\n\tmt:\"Asset Administration Shell Environment\"\n\tc:\"Submodel\"\n\tmax:1")))
-                    .setAttrRepAttribute("NOTEBOOK\n\nAVAL sTaskType:\"Task type\"\nAVAL sLoopCharacteristic:\"Loop type\"\n\n#------------------\nCHAPTER \"Description\"\nATTR \"Name\"\nATTR \"Show name\" # inside, below\nATTR \"Order\"\nATTR \"Description\" lines:5\nATTR \"Comment\" lines:5\nATTR \"Open questions\" lines:5\nATTR \"Make decision\" lines:3\n\n#------------------\nCHAPTER \"Task type\"\nATTR \"Task type\" ctrltype:radio # Not specified, Service, Send, Receive, User, Manual, Business rule, Script, Call activity\nATTR \"Global task\" ctrltype:check checked-value:\"Yes\" unchecked-value:\"No\"\n      enabled:((sTaskType = \"User\") OR (sTaskType = \"Manual\") OR (sTaskType = \"Business rule\") OR (sTaskType = \"Script\"))\n\n#------------------\nCHAPTER \"Task properties\"\nGROUP \"Object relevance\"\n  ATTR \"Auditing\" ctrltype:check checked-value:\"Yes\" unchecked-value:\"No\"\n  ATTR \"Monitoring\" ctrltype:check checked-value:\"Yes\" unchecked-value:\"No\"\nENDGROUP\nATTR \"For compensation\" ctrltype:check checked-value:\"Yes\" unchecked-value:\"No\"\nGROUP \"Service task details\"\n  ATTR \"Automated service details\" enabled:(sTaskType = \"Service\")\nENDGROUP\nGROUP \"Send/Receive task details\"\n  ATTR \"Referenced message\" ctrltype:check checked-value:\"Yes\" unchecked-value:\"No\" enabled:((sTaskType = \"Send\") OR (sTaskType = \"Receive\"))\nENDGROUP\nGROUP \"Receive task details\"\n  ATTR \"Instantiate\" ctrltype:check checked-value:\"Yes\" unchecked-value:\"No\" enabled:(sTaskType = \"Receive\")\nENDGROUP\nGROUP \"Call activity details\"\n  ATTR \"Call activity\" enabled:(sTaskType = \"Call activity\")\nENDGROUP\n\n#------------------\nCHAPTER \"Loop properties\"\nGROUP \"Loop details\"\n  ATTR \"Loop type\" # Not specified, Standard, Multi-instance\n  ATTR \"Loop condition (standard)\" enabled:(sLoopCharacteristic = \"Standard\")\nENDGROUP\nGROUP \"Multi-instance loop details\"\n  ATTR \"Sequential execution\" ctrltype:check checked-value:\"Yes\" unchecked-value:\"No\" enabled:(sLoopCharacteristic = \"Multi-instance\")\n  ATTR \"Cardinality\" enabled:(sLoopCharacteristic = \"Multi-instance\")\n  ATTR \"Referenced data input\" enabled:(sLoopCharacteristic = \"Multi-instance\")\n  ATTR \"Referenced data output\" enabled:(sLoopCharacteristic = \"Multi-instance\")\n  ATTR \"Completion condition\" enabled:(sLoopCharacteristic = \"Multi-instance\")\nENDGROUP\n\n#------------------\nCHAPTER \"Time/Costs\"\nGROUP \"Times\"\n  ATTR \"Waiting time\"\n  ATTR \"Execution time\"\n  ATTR \"Resting time\"\n  ATTR \"Transport time\"\nENDGROUP\nGROUP \"Costs\"\n  ATTR \"Costs\"\nENDGROUP\n\n#------------------\nCHAPTER \"Additional properties\"\nATTR \"Additional properties\" lines:15\n\n#------------------\nCHAPTER \"RACI properties\"\nGROUP \"RACI\"\n  ATTR \"Responsible\" lines:5\n  ATTR \"Accountable\"\n  ATTR \"Consult\" lines:5\n  ATTR \"Inform\" lines:5\nENDGROUP\n\n#------------------\nCHAPTER \"Simulation settings\"\nGROUP \"Simulation\"\n  ATTR \"Performer\" dialog:actor lines:3\n  ATTR \"Continuous execution\" ctrltype:check checked-value:\"yes\" unchecked-value:\"no\"\n  ATTR \"Done by\"\n  ATTR \"Execution interruptable\" ctrltype:check checked-value:\"yes\" unchecked-value:\"no\"\n  ATTR \"Task stack\"\nENDGROUP\nGROUP \"Cooperation\"\n  ATTR \"Cooperative\"  ctrltype:check checked-value:\"yes\" unchecked-value:\"no\"\n  ATTR \"Cooperation mode\" ctrltype:radio\n  ATTR \"Average number of participants\"\n  ATTR \"Min. quota of presence\"\n  ATTR \"Max. start period\"\nENDGROUP\nGROUP \"Conflict strategies\"\n  ATTR \"Priority\"\n  ATTR \"Max. resource waiting time\"\nENDGROUP\n\n#------------------\nCHAPTER \"Simulation results\"\nATTR \"Number\" write-protected\nGROUP \"Aggregated times\"\n  ATTR \"Aggregated waiting time\" write-protected\n  ATTR \"Aggregated execution time\" write-protected\n  ATTR \"Aggregated resting time\" write-protected\n  ATTR \"Aggregated transport time\" write-protected\nENDGROUP\nGROUP \"Aggregated costs\"\n  ATTR \"Aggregated costs\" write-protected\n  ATTR \"Aggregated personnel costs\" write-protected\nENDGROUP\nATTR \"Info on results\" write-protected lines:5\n\n#------------------\nCHAPTER \"RDF properties\"\nATTR \"URI\"\nATTR \"Additional Triples\" lines:10\nGROUP \"Service task details\"\n  ATTR \"Automated service details\" enabled:(sTaskType = \"Service\")\nENDGROUP\nATTR \"Used system\" lines:5\nATTR \"Used cases\" lines:5\nATTR \"Make decision\"\nGROUP \"RACI\"\n  ATTR \"Responsible\" lines:5\n  ATTR \"Accountable\"\n  ATTR \"Consult\" lines:5\n  ATTR \"Inform\" lines:5\nENDGROUP\n\n#------------------\nCHAPTER \"General purpose\"\nATTR \"General purpose attribute\" lines:12\nATTR \"Custom attributes\" lines:12\nATTR \"Sort custom attributes\" push-button no-param\nATTR \"objectid\" write-protected\n\n#------------------\nCHAPTER \"AAS\"\nATTR \"AAS Submodel\"\n")
+                    .setAttrRepAttribute(lib.getApplicationLibraryNew().getDynamicLibrary().getClassDefinition("Task (BPMN)").findAttributeValue("AttrRep").getRaw(false) + "\n\n#------------------\nCHAPTER \"AAS\"\nATTR \"AAS Submodel\"\n")
 
             ;
 
@@ -478,6 +494,7 @@ public class AASBeeUpDefinitionLibrary {
 
             lib.getApplicationLibraryNew().addFilePath("aas.json", AASBeeUpDefinitionLibrary.class.getResource("aas.json").toURI().getPath());
             lib.getApplicationLibraryNew().addFilePath("AAS_Utils.asc", AASBeeUpDefinitionLibrary.class.getResource("AAS_Utils.asc").toURI().getPath());
+            lib.getApplicationLibraryNew().addFilePath("modapto.properties", AASBeeUpDefinitionLibrary.class.getResource("modapto.properties").toURI().getPath());
             
             lib.generateDB("adoDBOLIVE", "eM4-EjwV-CKbRaaOSi5mGwZuErVT6v9CAKEwvRGl", "D41010EE328888ACDE410ADBABCFDC3AFF1B264E0162C5C3D0F27235E65110B8");
             if(libraryExportPath!=null && !libraryExportPath.isEmpty()) {

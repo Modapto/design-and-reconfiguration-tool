@@ -819,4 +819,6 @@ MODELTYPE "Data Binding Model"
 INCL "External Service"
 INCL "Internal Service"
 INCL "FMU"
+INCL "AAS Reference"
+INCL "binding"
 MODE "All Objects" from:all
